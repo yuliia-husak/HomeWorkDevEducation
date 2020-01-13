@@ -323,6 +323,7 @@ namespace _01_009_HomeTask_2_massiv
         }
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             int[,] arr = new int[3, 3];
 
             List<string> menuItem = new List<string>() 

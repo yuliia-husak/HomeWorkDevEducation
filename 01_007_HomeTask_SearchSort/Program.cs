@@ -348,6 +348,7 @@ namespace _01_007_HomeTask_SearchSort
         }
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             List<string> menuItem = new List<string>()
             {
                 "TheorySearchSort\n",
