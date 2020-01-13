@@ -39,7 +39,7 @@ section {
     color: tomato;
 }
 
-table {
+table {    
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     font-size: 14px;
     border-collapse: collapse;
@@ -64,4 +64,8 @@ td {
 
 th:first-child, td:first-child {
     text-align: left;
+}
+
+.table {
+    display: block;
 }
