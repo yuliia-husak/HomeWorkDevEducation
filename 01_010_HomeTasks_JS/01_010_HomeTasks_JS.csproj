@@ -72,10 +72,25 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="index.html" />
-    <Content Include="script.js" />
-    <Content Include="square.html" />
-    <Content Include="style.css" />
+    <Content Include="html\calculator.html" />
+    <Content Include="html\calculatorCalorie.html" />
+    <Content Include="html\hourglass.html" />
+    <Content Include="html\index.html" />
+    <Content Include="html\rectangle.html" />
+    <Content Include="html\triangle.html" />
+    <Content Include="img\background.jpg" />
+    <Content Include="js\calculator.js" />
+    <Content Include="js\calculatorCalorie.js" />
+    <Content Include="js\hourglass.js" />
+    <Content Include="js\rectangle.js" />
+    <Content Include="js\script.js" />
+    <Content Include="html\square.html" />
+    <Content Include="js\square.js" />
+    <Content Include="js\triangle.js" />
+    <Content Include="style\calculator.css" />
+    <Content Include="style\calculatorCalorie.css" />
+    <Content Include="style\square.css" />
+    <Content Include="style\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

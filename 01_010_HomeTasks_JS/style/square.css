@@ -1,0 +1,18 @@
+﻿* {
+    font-weight: 500;
+    /*background-image: url('../img/background.jpg');*/
+}
+
+
+body {
+    margin:0 auto; 
+    margin-top:200px;
+    text-align: center;
+    padding: 10px;
+    font-size: 44px;
+    font-size: 38px;
+    font-weight:bold;
+    line-height:0.5;
+    color:black;
+    
+}
