@@ -2,9 +2,87 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <script src="../js/calculatorCalorie.js"></script>
+    <link rel="stylesheet" href="../style/calculatorCalorie.css" />
     <title>Calculator calorie</title>
+
+    <!--обновление страницы автоматически-->
+    <!--<script>
+        setTimeout(function () {
+            location.reload();
+        }, 15000);
+    </script>-->
+
 </head>
 <body>
+    <div class="form-wrap">
+        <div class="profile">
+        </div>
+        <form method="get" id="forma" onsubmit="return false">
+            <div>
+                <label for="age">Возраст</label>
+                <input type="text" id="age" value="" name="age" required placeholder=" укажите ваш возраст"/>
+                <label for="age"> лет </label>
+            </div>
 
+            <div class="radio">
+                <span>Пол</span>
+                <label>
+                    <input type="radio" id="man" name="sex" required value="man" onclick="false">мужской                    
+                    <div class="radio-control male"></div>
+                </label>
+                <label>
+                    <input type="radio" name="sex" value="female" checked="checked" onclick="true">женский
+                    <div class="radio-control female"></div>
+                </label>
+            </div>
+
+            <div>
+                <label for="weight">Вес</label>
+                <input type="text" id="weight" value="" required />
+                <input type="radio" required name="weight" value="kilog" checked="checked">в килограммах
+                <input type="radio" name="weight" value="pound">в фунтах
+            </div>
+
+            <div>
+                <label for="height">Рост</label>
+                <input type="text" id="height" value="" required />
+                <input type="radio" name="height" value="centim" required checked="checked">сантиметров
+                <input type="radio" name="height" value="feet">футов/дюймов
+            </div>
+
+            <div class="activity_div">
+                <label for="activity">Степень физической активности</label>
+                <select id="activity" required>
+                    <option>Выберите степень</option>
+                    <option value="oneTwo">1-2 раза в неделю</option>
+                    <option value="threeFour">3-4 раза в неделю</option>
+                    <option value="fiveSix">5-6 раз в неделю</option>
+                    <option value="everyDay">ежедневно</option>
+                    <option value="never">отсутствует</option>
+                </select>
+                <div class="select-arrow"></div>
+            </div>
+
+            <div>
+                <label for="result">Результат</label>
+                <input type="radio" name="result" value="kkul" required checked="checked">ккал
+                <input type="radio" name="result" value="kilodj">килоджоулях
+            </div>
+
+            <div>
+                <label for="formula">Формула</label>
+                <input type="radio" name="formula" value="mifina" required checked="checked">Миффлина-Сан Жеора
+                <input type="radio" name="formula" value="harisa" required>Харриса-Бенедикта
+            </div>
+
+            <button type="submit" onclick="raschitat();">Сколько нужно каллорий в день</button>
+
+            <div class="resultKalorie">
+                <label id="resultKalorie"></label>
+            </div>
+        </form>
+    </div> 
 </body>
+
 </html>
