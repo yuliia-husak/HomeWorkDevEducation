@@ -23,7 +23,7 @@ namespace _02_001_Classes
             //p1.Name = "B";
             //Console.WriteLine(p1.Name);
 
-           
+
             //p1.ScalyarX = 2;
             //p1.ScalyarY = 3;
             //p1.ShowPoint();
@@ -48,15 +48,39 @@ namespace _02_001_Classes
             //array.Scalyar = 3;
             //array.Show();
             #endregion
+            #region ArrayTwo
+            //ArrayTwo two = new ArrayTwo(2, 2);
+            //two.KeyboardArray();
+            //two.Show();
+            //Console.WriteLine(two.Size);
+            //two.Scalyar = 2;
+            //two.Show();
+            //two.SortArray();
+            //two.Show();
+            #endregion
             #region
-            ArrayTwo two = new ArrayTwo(2, 2);
-            two.KeyboardArray();
-            two.Show();
-            Console.WriteLine(two.Size);
-            two.Scalyar = 2;
-            two.Show();
-            two.SortArray();
-            two.Show();
+            StringBuilder builder = new StringBuilder(5);
+            Console.WriteLine("Enter numbers chars: ");
+            int x = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter string: ");
+            StringBuilder stringBuilder1 = new StringBuilder(Console.ReadLine());
+            MyString stringCl = new MyString(x, stringBuilder1);
+            Console.WriteLine(stringBuilder1);
+            Console.WriteLine("Coutn spase= {0}", stringCl.CountSpaces());
+            Console.WriteLine("Change string: ");
+            Console.WriteLine(stringCl.StrLow());
+
+            Console.WriteLine("Change string: ");
+            Console.WriteLine("stringCl.RemovePuncts()");
+
+            Console.WriteLine("Properties: " + stringCl.Size);
+            Console.WriteLine("Enter string: ");
+            StringBuilder stringBuilder2 = new StringBuilder(Console.ReadLine());
+            MyString stringCl12 = new MyString(stringBuilder2.Length, stringBuilder2);
+            stringCl12.N = stringBuilder2.Length;
+            Console.WriteLine("Properties Value: " + stringCl12.N);
+
+
 
 
 
