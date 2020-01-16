@@ -37,7 +37,19 @@ namespace _02_001_Classes
             p1.ShowPoint();
 
             p1.CalculateDistance(p1);
-            #endregion 
+            #endregion
+            #region ArrayOne
+            ArrayOne array = new ArrayOne(5);
+            array.KeyboardTouch();
+            array.Show();
+            array.SortArray();
+            array.Show();
+            Console.WriteLine(array.SizeArray);
+            array.Scalyar = 3;
+            array.Show();
+
+
+            #endregion
 
 
 
