@@ -58,34 +58,55 @@ namespace _02_001_Classes
             //two.SortArray();
             //two.Show();
             #endregion
-            #region
-            StringBuilder builder = new StringBuilder(5);
-            Console.WriteLine("Enter numbers chars: ");
-            int x = int.Parse(Console.ReadLine());
-            Console.WriteLine("Enter string: ");
-            StringBuilder stringBuilder1 = new StringBuilder(Console.ReadLine());
-            MyString stringCl = new MyString(x, stringBuilder1);
-            Console.WriteLine(stringBuilder1);
-            Console.WriteLine("Coutn spase= {0}", stringCl.CountSpaces());
-            Console.WriteLine("Change string: ");
-            Console.WriteLine(stringCl.StrLow());
+            #region StringBuilder
+            //StringBuilder builder = new StringBuilder(5);
+            //Console.WriteLine("Enter numbers chars: ");
+            //int x = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter string: ");
+            //StringBuilder stringBuilder1 = new StringBuilder(Console.ReadLine());
+            //MyString stringCl = new MyString(x, stringBuilder1);
+            //Console.WriteLine(stringBuilder1);
+            //Console.WriteLine("Coutn spase= {0}", stringCl.CountSpaces());
+            //Console.WriteLine("Change string: ");
+            //Console.WriteLine(stringCl.StrLow());
 
-            Console.WriteLine("Change string: ");
-            Console.WriteLine("stringCl.RemovePuncts()");
+            //Console.WriteLine("Change string: ");
+            //Console.WriteLine("stringCl.RemovePuncts()");
 
-            Console.WriteLine("Properties: " + stringCl.Size);
-            Console.WriteLine("Enter string: ");
-            StringBuilder stringBuilder2 = new StringBuilder(Console.ReadLine());
-            MyString stringCl12 = new MyString(stringBuilder2.Length, stringBuilder2);
-            stringCl12.N = stringBuilder2.Length;
-            Console.WriteLine("Properties Value: " + stringCl12.N);
-
-
-
-
-
+            //Console.WriteLine("Properties: " + stringCl.Size);
+            //Console.WriteLine("Enter string: ");
+            //StringBuilder stringBuilder2 = new StringBuilder(Console.ReadLine());
+            //MyString stringCl12 = new MyString(stringBuilder2.Length, stringBuilder2);
+            //stringCl12.N = stringBuilder2.Length;
+            //Console.WriteLine("Properties Value: " + stringCl12.N);
             #endregion
+            #region
+            MyData dateTime1 = new MyData();
+            Console.WriteLine(dateTime1.GetSetDate);
 
+            Console.WriteLine("Enter date please format(yyyy,mm,dd) : ");
+            DateTime dateTime2 = DateTime.Parse(Console.ReadLine());
+            MyData MyData2 = new MyData(dateTime2);
+            Console.WriteLine(dateTime2);
+
+
+            MyData MyData3 = new MyData();
+            Console.WriteLine(MyData3.GetSetDate);
+            Console.WriteLine($"Work with date: {MyData3.GetSetDate}");
+            Console.WriteLine($"Constructor date: {MyData3.GetSetDate}");
+
+            Console.WriteLine($"The next day: {MyData3.NextDay()}");
+            Console.WriteLine($"The previos day: {MyData3.PreviousDay()}");
+
+            Console.WriteLine($"Until the end of month: {MyData3.HowDaysEndMonth()} days.");
+
+            Console.WriteLine("Enter date please: ");
+            DateTime dateTime4 = DateTime.Parse(Console.ReadLine());
+            MyData2.GetSetDate = dateTime4;
+
+            if (MyData2.Year) Console.WriteLine($"Year {dateTime4.Year} leap-year.");
+            else Console.WriteLine($"Year {dateTime4.Year} don't leap-year.");
+            #endregion
 
             Console.ReadKey();
         }
