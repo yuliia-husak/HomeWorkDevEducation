@@ -12,7 +12,7 @@ namespace PassworStrengthChekerTests
         {
             //arrange
             string password = "P2sc0*isp";
-            int expected = 5;
+            int expected = 5; //all options
 
             //act            
             int actual = PasswordStrengthCheker.GetPasswordStrength(password);
@@ -26,7 +26,7 @@ namespace PassworStrengthChekerTests
         {
             //arrange
             string password = "P2sc0";
-            int expected = 3;
+            int expected = 3; //1-uppercase, 2-number, 3-lowercase
 
             //act            
             int actual = PasswordStrengthCheker.GetPasswordStrength(password);
@@ -40,7 +40,7 @@ namespace PassworStrengthChekerTests
         {
             //arrange
             string password = "258456";
-            int expected = 1;
+            int expected = 1; //1-number
 
             //act            
             int actual = PasswordStrengthCheker.GetPasswordStrength(password);
