@@ -56,9 +56,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassWork20012020\ClassWork20012020.csproj">
+    <ProjectReference Include="..\ClassWork20012020\ClassWork20012020_MyCal.csproj">
       <Project>{4d4b31b7-ae1a-4ebc-91de-42f597933e79}</Project>
-      <Name>ClassWork20012020</Name>
+      <Name>ClassWork20012020_MyCal</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

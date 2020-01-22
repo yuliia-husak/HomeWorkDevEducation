@@ -58,13 +58,15 @@ namespace _02_003_TDD_DZ_1_Test
             try
             {
                 Sqr.SqureRoot(-10);
+                //Assert.Fail("*****");
             }
             catch (ArgumentOutOfRangeException e)
             {
+                Assert.Fail();//Тест не проходит если Catch не срабатывает            
                 return;
             }
 
-            Assert.Fail();//Тест не проходит если Catch не срабатывает
+            //Assert.Fail();//Тест не проходит если Catch не срабатывает
         }
     }
 }

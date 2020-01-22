@@ -59,9 +59,9 @@ namespace ClassWork22012020
         [Test]
         public void Greater()
         {
-            Assert.Greater(a, b);
+            Assert.Greater(b, a);
 
-            Assert.GreaterOrEqual(a, b);
+            Assert.GreaterOrEqual(b, a);
         }
 
         [Test]
