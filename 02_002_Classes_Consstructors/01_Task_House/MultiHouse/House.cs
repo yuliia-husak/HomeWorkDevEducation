@@ -17,7 +17,7 @@ namespace _02_002_Classes_Consstructors.MultiHouse
             get { return number; }
             set { number = value; }
         }
-
+        
         public House()
         {
             number = 0;
@@ -78,8 +78,8 @@ namespace _02_002_Classes_Consstructors.MultiHouse
 
         public void Show()
         {
-            Console.WriteLine($"House number: {number}\n Counts apartments:{apartments.Length}");
-            
+            Console.WriteLine($"House number: {number}\n Counts apartments:{apartments.Length}");            
         }
+
     }
 }
