@@ -71,7 +71,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1TDD_Tr_NUnit", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_004_HomeTask_Inheritance", "02_004_HomeTask_Inheritance\02_004_HomeTask_Inheritance.csproj", "{0C5030BE-2B3B-44A5-B0D5-B0CA1ACA6827}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork24012020", "ClassWork24012020\ClassWork24012020.csproj", "{E46CE6AE-F757-4A1C-B69E-F88F5D1BF04A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork24012020_BankCount_TDD", "ClassWork24012020\ClassWork24012020_BankCount_TDD.csproj", "{E46CE6AE-F757-4A1C-B69E-F88F5D1BF04A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
