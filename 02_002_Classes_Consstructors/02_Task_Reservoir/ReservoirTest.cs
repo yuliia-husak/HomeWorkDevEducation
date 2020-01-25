@@ -10,13 +10,31 @@ namespace _02_002_Classes_Consstructors._02_Task_Reservoir
 {
     [TestFixture]
     class ReservoirTest
-    {       
+    {
         Reservoir reservoir1 = new Reservoir("море", 2, 4, 3);
         Reservoir reservoir2 = new Reservoir("озеро", 5, 6, 7);
+        List<Reservoir> reservoirs1 = new List<Reservoir>(3);        
 
-       
-        
-        
+        [Test]
+       public void TestVolume243Returned24()
+        {
+            Assert.AreEqual(24, reservoir1.Volume());
+        }
+
+        [Test]
+        public void TestArea24Returned8()
+        {
+            Assert.AreEqual(8, reservoir1.Area());
+        }
+
+        //[Test]
+        //public void TestTypeReturnedFalse()
+        //{
+        //    reservoirs1[0].Name = "море";
+        //    reservoirs1[1].Name = "озеро";
+
+        //    Assert.IsFalse(false, reservoir1.CompareType(reservoir1,reservoir2));
+        //}
 
     }
 }

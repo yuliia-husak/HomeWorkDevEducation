@@ -52,21 +52,38 @@ namespace _02_002_Classes_Consstructors
             Reservoir reservoir2 = new Reservoir("море", 2, 4, 3);
             Reservoir reservoir3 = new Reservoir();
 
-            Reservoir[] reservoirs = new Reservoir[3];
+            //Reservoir[] reservoirs = new Reservoir[3];
 
             List<Reservoir> reservoirs1 = new List<Reservoir>(3);
-            reservoirs1.Add(new Reservoir("море", 2, 555554, 3));
+            reservoirs1.Add(new Reservoir("море", 2, 5, 3));
 
-            reservoirs1.ToString();
+            for(int i = 1; i < 10; i++)
+            {
+                reservoirs1.Add(new Reservoir());
+            }
 
             foreach (Reservoir p in reservoirs1)
             {
                 Console.WriteLine(p.ToString());
             }
 
-            reservoirs.ToString();
-            reservoir1.ToString();
+            Console.WriteLine($"Number of ponds in array: {reservoirs1.Count}");
             reservoir2.Show();
+
+            Console.WriteLine($"Area pound 1: {reservoirs1[0].Area()}");
+            Console.WriteLine($"Volume pound 1: {reservoirs1[0].Volume()}");
+
+            Console.WriteLine("Compare pound 1 and pound 2:");
+            Console.WriteLine("pound 1: " + reservoirs1[0].ToString());
+            Console.WriteLine("pound 2: " + reservoirs1[1].ToString());
+            if (reservoir1.CompareAreaMore(reservoirs1[0], reservoirs1[1]))
+                Console.WriteLine("pound 1 > pound 2");
+            else
+                Console.WriteLine("pound 1 < pound 2");
+
+            
+
+
 
             #endregion
 
