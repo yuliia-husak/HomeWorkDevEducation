@@ -54,6 +54,10 @@
     <Compile Include="01_Task_House\MultiHouse\House.cs" />
     <Compile Include="01_Task_House\MultiHouse\Human.cs" />
     <Compile Include="01_Task_House\MultiHouse\PaymentsCommunal.cs" />
+    <Compile Include="03_Task_MyString\MyString.cs" />
+    <Compile Include="04_Task_Fraction\Fraction.cs" />
+    <Compile Include="04_Task_Fraction\FractionTest.cs" />
+    <Compile Include="05_Task_PhoneBook\PhoneBook.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="02_Task_Reservoir\Reservoir.cs" />
     <Compile Include="02_Task_Reservoir\ReservoirTest.cs" />
