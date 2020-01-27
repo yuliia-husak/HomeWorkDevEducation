@@ -24,13 +24,19 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
         {
             return (a + b) * 2;
         }
-        public override void Draw()
+        public override void Draw(int a)
         {
+            
             for (int i = 1; i <= a; i++, Console.WriteLine())
             {
+                var x = Console.CursorLeft;
+                var y = Console.CursorTop;
+                Console.SetCursorPosition(x + 50, y);
                 for (int j = 1; j <= b; j++)
-
+                {
+                    
                     Console.Write(" " + "*");
+                }
             }
 
         }

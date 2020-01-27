@@ -25,10 +25,14 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
         }
 
 
-        public override void Draw()
+        public override void Draw(int q)
         {
+            
             for (int i = 1; i <= a; i++, Console.WriteLine())
             {
+                var x = Console.CursorLeft;
+                var y = Console.CursorTop;
+                Console.SetCursorPosition(x + q, y);
                 for (int j = 1; j <= a; j++)
 
                     Console.Write(" " + "*");

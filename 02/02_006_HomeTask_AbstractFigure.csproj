@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColectionFigures.cs" />
     <Compile Include="Figure\Circle.cs" />
-    <Compile Include="Figure\ConsoleCanvas.cs" />
     <Compile Include="Figure\Ellipse.cs" />
     <Compile Include="Figure\Parallelogram.cs" />
     <Compile Include="Figure\Rectangle.cs" />

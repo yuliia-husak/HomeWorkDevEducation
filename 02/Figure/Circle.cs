@@ -24,7 +24,7 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
             return 0;
         }
 
-        public override void Draw()
+        public override void Draw(int a)
         {
             //Console.WindowHeight = 50;
             //Console.WindowWidth = 110;

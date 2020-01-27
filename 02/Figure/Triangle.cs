@@ -52,16 +52,20 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
 
         }
 
-        public override void Draw()
+        public override void Draw(int a)
         {
             if (IsTriangle)
             {
+                
                 p = (a + b + c) / 2;
-                h = ((Math.Sqrt((p * ((p - a) * (p - b) * (p - c))) / a)));
+                h = 10;/*(Math.Sqrt((p * ((p - a) * (p - b) * (p - c))) / a));*/
                 var l = (int)(h * 2 - 1);
 
                 for (int i = 1; i <= h; i++,Console.WriteLine())
                 {
+                    var x = Console.CursorLeft;
+                    var y = Console.CursorTop;
+                    Console.SetCursorPosition(x + a, y);
                     for (int j = 1; j <= i; j++)
                        
                         Console.Write('*'+" ");

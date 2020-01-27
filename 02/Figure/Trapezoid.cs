@@ -26,7 +26,7 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
         {
             return a + b + c + d;
         }
-        public override void Draw()
+        public override void Draw(int a)
         {
             for (int i = 1; i <= a; i++, Console.WriteLine())
             {

@@ -11,7 +11,7 @@ namespace _02_006_HomeTask_AbstractFigure
         public abstract double Area();
         public abstract double Perimetr();
 
-        public abstract void Draw();
+        public abstract void Draw(int a);
 
         public abstract void Info();
     }
