@@ -50,45 +50,45 @@ namespace _02_002_Classes_Consstructors
 
             #region Reservoir---------------
 
-            //Reservoir reservoir1 = new Reservoir();
-            //Reservoir reservoir2 = new Reservoir("море", 2, 4, 3);
-            //Reservoir reservoir3 = new Reservoir();
+            Reservoir reservoir1 = new Reservoir();
+            Reservoir reservoir2 = new Reservoir("море", 2, 4, 3);
+            Reservoir reservoir3 = new Reservoir();
 
-            ////Reservoir[] reservoirs = new Reservoir[3];
+            //Reservoir[] reservoirs = new Reservoir[3];
 
-            //List<Reservoir> reservoirs1 = new List<Reservoir>(3);
-            //reservoirs1.Add(new Reservoir("море", 2, 5, 3));
+            List<Reservoir> reservoirs1 = new List<Reservoir>(3);
+            reservoirs1.Add(new Reservoir("море", 2, 5, 3));
 
-            //for(int i = 1; i < 10; i++)
-            //{
-            //    reservoirs1.Add(new Reservoir());
-            //}
+            for (int i = 1; i < 10; i++)
+            {
+                reservoirs1.Add(new Reservoir());
+            }
 
-            //foreach (Reservoir p in reservoirs1)
-            //{
-            //    Console.WriteLine(p.ToString());
-            //}
+            foreach (Reservoir p in reservoirs1)
+            {
+                Console.WriteLine(p.ToString());
+            }
 
-            //Console.WriteLine($"Number of ponds in array: {reservoirs1.Count}");
-            //reservoir2.Show();
+            Console.WriteLine($"Number of ponds in array: {reservoirs1.Count}");
+            reservoir2.Show();
 
-            //Console.WriteLine($"Area pound 1: {reservoirs1[0].Area()}");
-            //Console.WriteLine($"Volume pound 1: {reservoirs1[0].Volume()}");
+            Console.WriteLine($"Area pound 1: {reservoirs1[0].Area()}");
+            Console.WriteLine($"Volume pound 1: {reservoirs1[0].Volume()}");
 
-            //Console.WriteLine("Compare pound 1 and pound 2:");
-            //Console.WriteLine("pound 1: " + reservoirs1[0].ToString());
-            //Console.WriteLine("pound 2: " + reservoirs1[1].ToString());
-            //if (reservoir1.CompareAreaMore(reservoirs1[0], reservoirs1[1]))
-            //    Console.WriteLine("pound 1 > pound 2");
-            //else
-            //    Console.WriteLine("pound 1 < pound 2");  
+            Console.WriteLine("Compare pound 1 and pound 2:");
+            Console.WriteLine("pound 1: " + reservoirs1[0].ToString());
+            Console.WriteLine("pound 2: " + reservoirs1[1].ToString());
+            if (reservoir1.CompareAreaMore(reservoirs1[0], reservoirs1[1]))
+                Console.WriteLine("pound 1 > pound 2");
+            else
+                Console.WriteLine("pound 1 < pound 2");
             #endregion
 
             #region Fraction
 
-            Fraction fraction = new Fraction();
-            Fraction fraction1 = new Fraction();
-            Fraction test=new Fraction();
+            //Fraction fraction = new Fraction();
+            //Fraction fraction1 = new Fraction();
+            //Fraction test=new Fraction();
 
             //test=Fraction.Sum(fraction, fraction1);
 

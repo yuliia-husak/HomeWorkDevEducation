@@ -47,13 +47,7 @@ namespace _02_002_Classes_Consstructors._02_Task_Reservoir
             return width * length;
         }
 
-        //public static bool CompareType(Reservoir a, Reservoir b)
-        //{
-        //    if (a.name == b.name) return true;
-        //    return false;
-        //}
-
-        public int CompareType(Reservoir a, Reservoir b)
+        public static int CompareType(Reservoir a, Reservoir b)
         {
             
             if (a.name == b.name) return 1;
@@ -74,28 +68,7 @@ namespace _02_002_Classes_Consstructors._02_Task_Reservoir
             b.width = a.width;
             b.length = a.length;
             b.depth = a.depth;            
-        }
-
-        //public int Count
-        //{
-        //    get { return reservoirs.Length; }
-        //}
-
-        //public void Add(Reservoir item)
-        //{
-        //    var newArray = new Reservoir[reservoirs.Length + 1];
-        //    reservoirs.CopyTo(newArray, 0);
-        //    newArray[newArray.Length - 1] = item;
-        //    reservoirs = newArray;
-        //}
-
-        //public void Remove(Reservoir item)
-        //{
-        //    var newArray = new Reservoir[reservoirs.Length - 1];
-        //    reservoirs.CopyTo(newArray, 0);
-        //    newArray[newArray.Length + 1] = item;
-        //    reservoirs = newArray;
-        //}
+        }        
 
         public void CopyTo(Reservoir[] array, int arrayIndex)
         {
@@ -103,11 +76,7 @@ namespace _02_002_Classes_Consstructors._02_Task_Reservoir
         }
 
         public override string ToString()
-        {
-            //return base.ToString();
-            //return string.Format("Reservoir info: {0},{1},{2},{3},{4}", this.name,
-            //    this.width,this.length,this.depth, this.reservoirs.Count);
-
+        {            
             foreach (Reservoir p in reservoirs)
             {
                 return string.Format("Reservoir info: {0}, {1}, {2}, {3}, {4}", this.name,
@@ -116,7 +85,6 @@ namespace _02_002_Classes_Consstructors._02_Task_Reservoir
 
             return string.Format("Reservoir info: {0}, {1}, {2}, {3}, {4}", this.name,
                 this.width, this.length, this.depth, this.reservoirs.Count);
-
         }
 
         public void Show()

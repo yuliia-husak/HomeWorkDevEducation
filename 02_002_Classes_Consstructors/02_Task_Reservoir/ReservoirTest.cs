@@ -27,14 +27,11 @@ namespace _02_002_Classes_Consstructors._02_Task_Reservoir
             Assert.AreEqual(8, reservoir1.Area());
         }
 
-        //[Test]
-        //public void TestTypeReturnedFalse()
-        //{
-        //    reservoirs1[0].Name = "море";
-        //    reservoirs1[1].Name = "озеро";
-
-        //    Assert.IsFalse(false, reservoir1.CompareType(reservoir1,reservoir2));
-        //}
+        [Test]
+        public void TestTypeReturned0()
+        {            
+            Assert.AreEqual(0, Reservoir.CompareType(reservoir1, reservoir2));
+        }
 
     }
 }

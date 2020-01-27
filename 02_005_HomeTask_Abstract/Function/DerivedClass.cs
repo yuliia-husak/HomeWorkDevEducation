@@ -30,7 +30,7 @@ namespace _02_005_HomeTask_Abstract.Function
 
         public override void Show()
         {
-            Console.WriteLine("Line, a = {0}, b = {1}, x = {2}", A, B,CaalculPoint(3));
+            Console.WriteLine("Line, a = {0}, b = {1}, x = {2}", A, B, CaalculPoint(3));
         }
     }
 }

@@ -51,14 +51,7 @@ namespace _02_005_HomeTask_Abstract
             
 
             for (int i = 0; i < func.Length; i++)
-            {
-
-                //Console.WriteLine("Object — " + func[i].name);
-
-                //Console.WriteLine("Area = " + func[i].Area());
-
-                //Console.WriteLine("Perimetr = " + func[i].Perimetr());
-
+            {                
                 func[i].Show();
 
                 Console.WriteLine();

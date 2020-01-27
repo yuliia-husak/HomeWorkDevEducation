@@ -26,11 +26,10 @@ namespace _02_002_Classes_Consstructors._04_Task_Fraction
             Fraction fraction = new Fraction(1, 2);
             Fraction fraction1 = new Fraction(2, 3);
             Fraction fractionTestSum = new Fraction(3, 6);
-            
+
             //t=int.Parse(Fraction.Sum(fraction, fraction1));
-            
-            Assert.AreEqual(fractionTestSum.Numerator,
-                f)
+
+            Assert.AreEqual(fractionTestSum.Numerator, actual:fraction);
         }
     }
 }
