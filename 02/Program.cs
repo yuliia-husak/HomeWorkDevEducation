@@ -14,7 +14,7 @@ namespace _02_006_HomeTask_AbstractFigure
         static void Main(string[] args)
         {
             int p=0;
-
+            Console.OutputEncoding = Encoding.UTF8;
             Console.WriteLine("Выберите фигуру: " +
                 "\n1=Треугольник,2=Квадрат, 3=Ромб,\n " +
                 "4=Прямоугольник, 5=Параллелограмм,6= Трапеция,\n" +
