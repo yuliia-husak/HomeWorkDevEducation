@@ -11,6 +11,7 @@ namespace _02
 {
     class ColectionFigures: GeometricFigure
     {
+        //55555555555555
         public override double Area()
         {
             throw new NotImplementedException();
