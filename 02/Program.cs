@@ -161,10 +161,20 @@ namespace _02_006_HomeTask_AbstractFigure
                 switch (q)
                 {
                     case 1:
+                        Console.Clear();
+
+                        Circle circle = new Circle(4);
+                        circle.Draw(0);
+                        circle.Info();
+
+                        Ellipse ellipse = new Ellipse(8, 6);
+                        ellipse.Draw(0);
+                        ellipse.Info();
+
                         Square square = new Square(4);
                         square.Draw(0);
                         square.Info();
-                        Console.Beep();
+                        
                         Rectangle rectangle = new Rectangle(4, 6);
                         rectangle.Draw(0);
                         rectangle.Info();
@@ -175,20 +185,18 @@ namespace _02_006_HomeTask_AbstractFigure
 
                         Parallelogram parallelogram = new Parallelogram(4, 6);
                         parallelogram.Draw(0);
-                        parallelogram.Info();
-
-                        Ellipse ellipse = new Ellipse(8, 6);
-                        ellipse.Draw(0);
-                        ellipse.Info();
+                        parallelogram.Info();                        
 
                         Rhombus thombus = new Rhombus(10);
                         thombus.Draw(0);
-                        thombus.Info();
+                        thombus.Info();                       
 
-                        Circle circle = new Circle(4);
-                        circle.Draw(0);
-                        circle.Info();
+                        Rhombus rhombus = new Rhombus(6);
+                        rhombus.Draw(0);
+                        rhombus.Info();
+                        
                         break;
+
                     case 2:
                         break;
                 }

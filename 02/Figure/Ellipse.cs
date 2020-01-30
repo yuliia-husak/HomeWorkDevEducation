@@ -27,6 +27,7 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
 
         public override void Draw(int q)
         {
+            Console.Clear();
             var x = Console.CursorLeft;
             var y = Console.CursorTop;
             Console.SetCursorPosition(x + q, y);

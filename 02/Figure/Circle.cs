@@ -26,6 +26,7 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
 
         public override void Draw(int q)
         {
+            Console.Clear();
             //Console.WindowHeight = 50;
             //Console.WindowWidth = 110;  
             var x = Console.CursorLeft;
