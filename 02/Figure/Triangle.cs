@@ -52,20 +52,20 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
 
         }
 
-        public override void Draw(int a)
+        public override void Draw(int q)
         {
             if (IsTriangle)
             {
                 
                 p = (a + b + c) / 2;
-                h = 10;/*(Math.Sqrt((p * ((p - a) * (p - b) * (p - c))) / a));*/
+                h = c;/*(Math.Sqrt((p * ((p - a) * (p - b) * (p - c))) / a));*/
                 var l = (int)(h * 2 - 1);
 
                 for (int i = 1; i <= h; i++,Console.WriteLine())
                 {
                     var x = Console.CursorLeft;
                     var y = Console.CursorTop;
-                    Console.SetCursorPosition(x + a, y);
+                    Console.SetCursorPosition(x + q, y);
                     for (int j = 1; j <= i; j++)
                        
                         Console.Write('*'+" ");
@@ -78,7 +78,11 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
 
         public override void Info()
         {
-            Console.WriteLine($"Area {Area()}, Perimetr {Perimetr()}");
+            Console.WriteLine("----------------------");
+            Console.WriteLine("| Area  |  Perimetr  | ");
+            Console.WriteLine($"|  {Area()}    |    {Perimetr()}      |");
+            Console.WriteLine("----------------------");
+            Console.WriteLine("----------------------");
         }
     }
 }

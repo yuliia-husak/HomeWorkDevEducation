@@ -6,39 +6,51 @@ using System.Threading.Tasks;
 
 namespace _02_006_HomeTask_AbstractFigure.Figure
 {
-    class Parallelogram : GeometricFigure
+    class Rhombus : GeometricFigure
     {
-        double a, b;
-        //construktor
-        public Parallelogram(double a, double b)
-        {
+        double a;
+        public Rhombus(double a)
+        {            
             this.a = a;
-            this.b = b;
         }
-
         public override double Area()
         {
-            return a * b * Math.Sin(a);
+            int h = (int)(a * 8 / 10);
+            return a * h;
         }
-
         public override double Perimetr()
         {
-            return 2 * a + 2 * b;
+            return a * 4;
         }
 
         public override void Draw(int q)
         {
-            for (int i = 1; i <= a; i++, Console.WriteLine())
+            int center =(int) a / 2;
+            for(int i = 0; i < a; i++)
             {
                 var x = Console.CursorLeft;
                 var y = Console.CursorTop;
                 Console.SetCursorPosition(x + q, y);
-                for (int j = 1; j <= b; j++)
+                for (int j = 0; j < a; j++)
                 {
-
-                    Console.Write(" " + "*");
+                    if (i <= center)
+                    {
+                        if (j >= center - i && j <= center + i)
+                        {
+                            Console.Write("*");
+                        }
+                        else Console.Write(" ");
+                    }
+                    else
+                    {
+                        if (j >= center + i - a + 1 && j <= center - i + a - 1)
+                            Console.Write("*");
+                        else Console.Write(" ");
+                    }
                 }
+                Console.WriteLine();
             }
+            
         }
 
         public override void Info()

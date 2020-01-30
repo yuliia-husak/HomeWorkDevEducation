@@ -17,7 +17,7 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
         }
         public override double Area()
         {
-            return 3.14 * a * b;
+            return 3.14 * (a * b);
         }
 
         public override double Perimetr()
@@ -25,19 +25,35 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
             return 4 * (((3.14 * a * b) + (Math.Pow((a - b), 2) / a + b)));
         }
 
-        public override void Draw(int a)
+        public override void Draw(int q)
         {
-            for (int i = 1; i <= a; i++, Console.WriteLine())
+            var x = Console.CursorLeft;
+            var y = Console.CursorTop;
+            Console.SetCursorPosition(x + q, y);
+            int r = 10;
+            for (y = 0; y < r; ++y)
             {
-                for (int j = 1; j <= a; j++)
+                x = (int)Math.Round(2 * Math.Sqrt((Math.Pow(r, 2) - Math.Pow(y, 2))));
 
-                    Console.Write(" " + i);
+                Console.SetCursorPosition(x + r, y + r);
+                Console.Write('*');
+                Console.SetCursorPosition(x + r, -y + r);
+                Console.Write('*');
+                Console.SetCursorPosition(-x + 2 * r, -y + r);
+                Console.Write('*');
+                Console.SetCursorPosition(-x + 2 * r, y + r);
+                Console.Write('*');
             }
+            Console.SetCursorPosition(0, r * 2 + 2);
         }
 
         public override void Info()
         {
-            Console.WriteLine($"Area {Area()}, Perimetr {Perimetr()}");
+            Console.WriteLine("----------------------");
+            Console.WriteLine("| Area  |  Perimetr  | ");
+            Console.WriteLine($"|  {Area()}    |    {Perimetr()}      |");
+            Console.WriteLine("----------------------");
+            Console.WriteLine("----------------------");
         }
     }
 }

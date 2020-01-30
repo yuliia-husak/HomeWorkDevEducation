@@ -24,14 +24,14 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
         {
             return (a + b) * 2;
         }
-        public override void Draw(int a)
+        public override void Draw(int q)
         {
             
             for (int i = 1; i <= a; i++, Console.WriteLine())
             {
                 var x = Console.CursorLeft;
                 var y = Console.CursorTop;
-                Console.SetCursorPosition(x + 50, y);
+                Console.SetCursorPosition(x + q, y);
                 for (int j = 1; j <= b; j++)
                 {
                     
@@ -43,7 +43,11 @@ namespace _02_006_HomeTask_AbstractFigure.Figure
 
         public override void Info()
         {
-           Console.WriteLine( $"Area {Area()}, Perimetr {Perimetr()}");
+            Console.WriteLine("----------------------");
+            Console.WriteLine("| Area  |  Perimetr  | ");
+            Console.WriteLine($"|  {Area()}    |    {Perimetr()}      |");
+            Console.WriteLine("----------------------");
+            Console.WriteLine("----------------------");
         }
     }
 }
