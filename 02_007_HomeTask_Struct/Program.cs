@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using Newtonsoft.Json;
+using System.Text;
 
 namespace _02_007_HomeTask_Struct
 {
@@ -10,7 +11,7 @@ namespace _02_007_HomeTask_Struct
     {
         private static void Main()
         {
-
+            Console.OutputEncoding = Encoding.UTF8;
             string[] inputData = File.ReadAllLines("TextInput.txt");
             Student[] students = new Student[inputData.Length];
             for (int index = 0; index < inputData.Length; index++)
@@ -112,16 +113,16 @@ namespace _02_007_HomeTask_Struct
             {
                 Console.WriteLine(st.ToString());                
             }
-            
 
-            //записываем в файл новых студентов
-            string[] linesToSave2 = new string[stud2.Length];
+
+            ////записываем в файл новых студентов
+            string[] linesToSave2 = new string[stud2.Length+1];
             for (int i = 0; i < stud2.Length; i++)
             {
                 Student student = stud2[i];
                 linesToSave2[i] = student.ToString();
             }
-            
+
             File.AppendAllLines("TextInput.txt", linesToSave2);
 
             // оценка 4 и 5
@@ -196,10 +197,10 @@ namespace _02_007_HomeTask_Struct
             Console.ReadKey();
         }
     }
-
+    
     internal struct Student : IComparable
     {
-        int[] ozenki;
+        
         public Student(string name, string faculty, int course, string group,
             int assessments1, int assessments2, int assessments3, int assessments4, int assessments5) : this()
         {
