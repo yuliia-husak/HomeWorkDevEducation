@@ -1,0 +1,14 @@
+﻿<Window x:Class="_02_008_HomeTask_DelegateLamdba.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_02_008_HomeTask_DelegateLamdba"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400" x:Name="Window1">
+    <Grid>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Center" Margin="101,66,101,0" VerticalAlignment="Top" Width="190" RenderTransformOrigin="-0.613,0" Height="50" Click="btnClose_Click"/>
+        <Button x:Name="btnMore10" Content="More 10%" HorizontalAlignment="Center" Margin="101,171,101,0" VerticalAlignment="Top" Width="190" Click="Button_Click" Height="50"/>
+
+    </Grid>
+</Window>
