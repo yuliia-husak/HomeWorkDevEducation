@@ -54,31 +54,5 @@ namespace _02_008_HomeTask_DelegateLamdba
 
         private double _windowWidth;
         private double _windowHeight;
-
-        //public double WindowWidth
-        //{
-        //    get { return _windowWidth; }
-        //    set
-        //    {
-        //        if (!Equals(_windowWidth, value))
-        //        {
-        //            _windowWidth = value;
-        //            RaisePropertyChanged();
-        //        }
-        //    }
-        //}
-        //public double WindowHeight
-        //{
-        //    get { return _windowHeight; }
-        //    set
-        //    {
-        //        if (!Equals(_windowHeight, value))
-        //        {
-        //            _windowHeight = value;
-        //            RaisePropertyChanged();
-        //        }
-        //    }
-        //}
-
     }
 }

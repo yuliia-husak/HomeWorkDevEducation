@@ -12,15 +12,22 @@ namespace Task_2
         delegate void Symbol(char c);
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
+
             char c = 'о';
             string s = "У лукоморья дуб зеленый";
+
             CountSumbString countSumbString = CountSumbol;
+
             int result = countSumbString(c, s);
             Console.WriteLine(result);
+
             countSumbString = IndexFirst;
+
             result = countSumbString(c, s);
             Console.WriteLine(result);
-            Console.Read();
+
+            Console.ReadKey();
         }
 
         public static int CountSumbol(char c, string s)

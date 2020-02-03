@@ -16,7 +16,7 @@ namespace Task_2
         string s = "dilsb  bies";
 
         [Test]
-        public void Count_o_returned_2()
+        public void Count_b_returned_2()
         {            
             CountSumbString countTest = CountSumbol;
             int testres = countTest(c, s);
