@@ -28,7 +28,7 @@ namespace Task_3
             {
                 del += item.MyMethod;
             }
-            char c = 'o';
+            char c = 't';
             del(c);
             foreach (var item in array)
             {
