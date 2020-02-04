@@ -1,0 +1,17 @@
+﻿<Window x:Class="Task_4_StatMet_IntMas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task_4_StatMet_IntMas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Enter  array elements space separated:" HorizontalAlignment="Center" Margin="204,23,185,0" VerticalAlignment="Top" Width="403" Height="43" FontSize="22"/>
+        <TextBox x:Name="txtData" HorizontalAlignment="Left" Height="27" Margin="84,96,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="624" FontSize="18" Background="LightBlue"/>
+        <Label Content="Each element of the array is multipied on 10" HorizontalAlignment="Left" Margin="184,163,0,0" VerticalAlignment="Top" Width="449" FontSize="22"/>
+        <Button x:Name="btnModif" Content="Display modified array" HorizontalAlignment="Left" Margin="302,233,0,0" VerticalAlignment="Top" Width="208" Height="37" FontSize="18" Click="btnModif_Click"/>
+        <TextBox x:Name="txtResult" HorizontalAlignment="Left" Height="102" Margin="84,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="624" FontSize="18" Background="LightGoldenrodYellow"/>
+
+    </Grid>
+</Window>
