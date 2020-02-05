@@ -21,7 +21,7 @@ namespace Task_5_Lambda_Number3
         {
             x = 123;
 
-            myDelegate = x => 
+            myDelegate = x =>
             {
                 int[] numb3 = new int[3];
                 int count = 2;

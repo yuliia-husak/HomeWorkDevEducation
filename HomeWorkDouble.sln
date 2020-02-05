@@ -105,6 +105,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_4_StatMet_IntMas", "Ta
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_5_Lambda_Number3", "Task_5_Lambda_Number3\Task_5_Lambda_Number3.csproj", "{2CEB6A52-65CA-4422-A822-BC51A0DD36EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork05022020_Generics", "ClassWork05022020_Generics\ClassWork05022020_Generics.csproj", "{4D3E95BC-C3E5-4184-965B-4213C7B4C548}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -303,6 +305,10 @@ Global
 		{2CEB6A52-65CA-4422-A822-BC51A0DD36EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CEB6A52-65CA-4422-A822-BC51A0DD36EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CEB6A52-65CA-4422-A822-BC51A0DD36EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D3E95BC-C3E5-4184-965B-4213C7B4C548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D3E95BC-C3E5-4184-965B-4213C7B4C548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D3E95BC-C3E5-4184-965B-4213C7B4C548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D3E95BC-C3E5-4184-965B-4213C7B4C548}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -357,6 +363,7 @@ Global
 		{2729EBEA-0494-4238-899B-4A49F467760B} = {1B3C8083-B151-4E87-ABE9-C67037ED2037}
 		{B294861D-0120-4DEF-96B4-0AE967B8B7B4} = {1B3C8083-B151-4E87-ABE9-C67037ED2037}
 		{2CEB6A52-65CA-4422-A822-BC51A0DD36EE} = {1B3C8083-B151-4E87-ABE9-C67037ED2037}
+		{4D3E95BC-C3E5-4184-965B-4213C7B4C548} = {1C95415B-57F3-456A-86C1-63243B98D6D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9BA51885-EB3C-44A3-984A-D36717A6B89B}
