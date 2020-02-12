@@ -131,6 +131,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_Delegate", "01_Delegate\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02_008_HomeTask_Event_Tamagotchi", "02_008_HomeTask_Event_Tamagotchi\02_008_HomeTask_Event_Tamagotchi.csproj", "{3EE84B3F-8955-4EA8-A7C5-2FECED964256}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork12022020_Thread", "ClassWork12022020\ClassWork12022020_Thread.csproj", "{DC7F08E2-F89A-47D6-9384-2092EAD7C131}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -373,6 +375,10 @@ Global
 		{3EE84B3F-8955-4EA8-A7C5-2FECED964256}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EE84B3F-8955-4EA8-A7C5-2FECED964256}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EE84B3F-8955-4EA8-A7C5-2FECED964256}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC7F08E2-F89A-47D6-9384-2092EAD7C131}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC7F08E2-F89A-47D6-9384-2092EAD7C131}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC7F08E2-F89A-47D6-9384-2092EAD7C131}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC7F08E2-F89A-47D6-9384-2092EAD7C131}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -440,6 +446,7 @@ Global
 		{BF7A66D0-98F7-4378-95E8-E21B8FC95B85} = {1C95415B-57F3-456A-86C1-63243B98D6D1}
 		{6D9717DD-DCC6-4A59-A720-BD7D2252D042} = {BF7A66D0-98F7-4378-95E8-E21B8FC95B85}
 		{3EE84B3F-8955-4EA8-A7C5-2FECED964256} = {1C95415B-57F3-456A-86C1-63243B98D6D1}
+		{DC7F08E2-F89A-47D6-9384-2092EAD7C131} = {1C95415B-57F3-456A-86C1-63243B98D6D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9BA51885-EB3C-44A3-984A-D36717A6B89B}
