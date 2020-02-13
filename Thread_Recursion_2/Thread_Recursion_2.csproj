@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3EE84B3F-8955-4EA8-A7C5-2FECED964256}</ProjectGuid>
+    <ProjectGuid>{7A1DEC86-CAAD-4ADF-B432-7462F10FC07F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_02_008_HomeTask_Event_Tamagotchi</RootNamespace>
-    <AssemblyName>02_008_HomeTask_Event_Tamagotchi</AssemblyName>
+    <RootNamespace>Thread_Recursion_2</RootNamespace>
+    <AssemblyName>Thread_Recursion_2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tamagtchi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
