@@ -26,6 +26,7 @@ namespace _02_008_HomeTask_Event_Tamagotchi
 
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             Thread thread = new Thread(SetTimer);
             thread.Priority = ThreadPriority.Lowest;
             thread.Start();

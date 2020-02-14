@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _02_008_HomeTask_Event_Tamagotchi
 {
-    class Tamagtchi
+    public class Tamagtchi
     {
         int ignore { get; set; } = 3;
 

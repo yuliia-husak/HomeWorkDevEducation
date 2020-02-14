@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0D6CD852-9616-4433-8994-97E640B01769}</ProjectGuid>
+    <ProjectGuid>{8391D6B7-3B11-46EE-A340-96FD794E2732}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_02_010_HomeTask_List_Exeptions</RootNamespace>
-    <AssemblyName>02_010_HomeTask_List_Exeptions</AssemblyName>
+    <RootNamespace>_02_011_HomeTask_Overload_LINQ</RootNamespace>
+    <AssemblyName>02_011_HomeTask_Overload_LINQ</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,18 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="01_DublicateDelet\Node.cs" />
-    <Compile Include="02_List_Two_Five\MyList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="01_DublicateDelet\Simle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="03_Count_Book\" />
-    <Folder Include="04_Class_Person\" />
+    <Folder Include="01_List\" />
+    <Folder Include="02_Fraction\" />
+    <Folder Include="03_Dictionary\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
