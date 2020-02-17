@@ -11,6 +11,7 @@ namespace ClassWork17022020_LINQ
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             int[] arrayInt = { 5, 34, 67, 12, 94, 42 };
 
             IEnumerable<IGrouping<int, int>> query =
@@ -152,19 +153,51 @@ namespace ClassWork17022020_LINQ
             Console.WriteLine($"Hash code: {worker.GetHashCode()}");
 
             //**********************************************************************************
+            //**********************************************************************************
+            Console.WriteLine(new string('-', 240));
+            List<Workers> workers = new List<Workers>();
+            List<Salary> salaries = new List<Salary>();
+
+            workers = Workers.Read_Workers();
+            salaries = Salary.Read_Salary();
+
+            var names = from item in workers
+                        where item.year < (2016 - 35)
+                        select item.name;
+            Console.WriteLine("\n\tВывести фамилии и инициалы сотрудников выше 35 лет.:");
+            foreach (string s in names)
+            {
+                Console.WriteLine( $"Name: {s}");
+            }
+
+
+            Console.WriteLine(new string('-', 240));
+            var max_salary = (from ms in salaries
+                              select ms.salary2).Max();
+
+            Console.WriteLine("\n\tВывести идентификационный код сотрудника с наибольшей зарплатой за второе полугодие.");
+            foreach (Salary salary in max_salary)
+            {
+                Console.WriteLine($"Id: {salary.Id}");
+            }
 
 
 
-           
-            
+            Console.WriteLine(new string('-', 240));
 
+            var result = from w in workers
+                         from sl in salaries
+                         let avg = (from s in salaries
+                                    select (s.salary1 + s.salary2)).Average()
+                         where ((sl.salary1 + sl.salary2) < avg) && (w.code == sl.code)
+                         select w.name + " - " + w.profession;
 
-
-
-
-
-
-
+            Console.WriteLine("\n\tВывести фамилии, инициалы и вид образования тех сотрудников, зарплата которых за год ниже средней за год");
+            foreach (Workers s in result)
+            {
+                Console.WriteLine($"Name: {s.code}");
+            }
+            Console.WriteLine(new string('-', 240));
 
             Console.ReadLine();
         }
