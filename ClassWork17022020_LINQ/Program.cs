@@ -172,16 +172,23 @@ namespace ClassWork17022020_LINQ
 
 
             Console.WriteLine(new string('-', 240));
+            var all_employees = from w in workers
+                                from sl in salaries
+                                let avg =(int)sl.salary1 + (int)sl.salary2
+                                where w.code==sl.code
+                                select w.name + " - " + w.profession + " salary for year " + avg;
+            Console.WriteLine("\tAll emplouyes: ");
+            foreach(var item in all_employees)
+            {
+                Console.WriteLine(item);
+            }
+
+
             var max_salary = (from ms in salaries
                               select ms.salary2).Max();
 
             Console.WriteLine("\n\tВывести идентификационный код сотрудника с наибольшей зарплатой за второе полугодие.");
-            foreach (Salary salary in max_salary)
-            {
-                Console.WriteLine($"Id: {salary.Id}");
-            }
-
-
+            Console.WriteLine($"Id = {(int)max_salary}");           
 
             Console.WriteLine(new string('-', 240));
 
@@ -193,9 +200,9 @@ namespace ClassWork17022020_LINQ
                          select w.name + " - " + w.profession;
 
             Console.WriteLine("\n\tВывести фамилии, инициалы и вид образования тех сотрудников, зарплата которых за год ниже средней за год");
-            foreach (Workers s in result)
+            foreach (var item in result)
             {
-                Console.WriteLine($"Name: {s.code}");
+                Console.WriteLine($"{item} ");
             }
             Console.WriteLine(new string('-', 240));
 

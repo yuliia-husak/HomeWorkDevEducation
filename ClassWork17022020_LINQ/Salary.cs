@@ -16,36 +16,9 @@ namespace ClassWork17022020_LINQ
 
         // чтение данных из файла "Salary.txt"
         public static List<Salary> Read_Salary()
-        {
-            //List<Salary> ls = null;
-            //// создать объект класса StreamReader, соответствующий файлу "Salary.txt"
-            //StreamReader sr = File.OpenText("Salary.txt");
-            //string[] fields; // переменная, соответствующая полям структуры Workers
-            //string line = null;
-            //Salary s=new Salary();
-
-            //// прочитать строку
-            //line = sr.ReadLine();
-
-            //while (line != null)
-            //{                
-            //    // разбить строку на подстроки - разделителем есть символ ';'
-            //    fields = line.Split(';');
-               
-            //    // создание структуры типа Salary                
-            //    s.code = fields[0];
-            //    s.salary1 = (float)Convert.ToDouble(fields[1]);
-            //    s.salary2 = (float)Double.Parse(fields[2]);
-
-            //    // добавление структуры типа Salary в список List<Salary>
-            //    ls.Add(s);
-                
-            //    // прочитать следующую строку
-            //    line = sr.ReadLine();
-            //}
-
+        {           
             List<Salary> salaries = new List<Salary>();
-            string path = @"C:\Users\user\Source\Repos\HomeWorkDevEducation\ClassWork17022020_LINQ\Salary.txt";
+            string path = @"C:\Users\user\Source\Repos\HomeWorkDevEducation4\ClassWork17022020_LINQ\Salary.txt";
 
             using (StreamReader sr = new StreamReader(path))
             {
