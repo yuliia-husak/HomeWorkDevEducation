@@ -28,13 +28,13 @@ namespace ClassWork10022020_Event
                 }
             };
 
-            Teacher teacher = new Teacher();
-            foreach(Student item in group)
-            {
-                teacher.examEvent += item.Exam;
-            }
+            //Teacher teacher = new Teacher();
+            //foreach(Student item in group)
+            //{
+            //    teacher.examEvent += item.Exam;
+            //}
 
-            teacher.Exam("Task");
+            //teacher.Exam("Task");
 
             Console.ReadLine();
         }

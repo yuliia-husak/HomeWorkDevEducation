@@ -51,17 +51,17 @@ namespace _02_010_HomeTask_List_Exeptions
             Console.ReadLine();
         }
 
-        public static int MethodTwo(List<T> ts)
-        {
-            int x = 0;
+        //public static int MethodTwo(List<T> ts)
+        //{
+        //    int x = 0;
 
-            foreach (var item in List)
-            {
+        //    foreach (var item in List)
+        //    {
 
-            }
+        //    }
 
 
-            return x;
-        }
+            //return x;
+        //}
     }
 }

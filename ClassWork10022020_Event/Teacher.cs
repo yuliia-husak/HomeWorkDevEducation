@@ -10,15 +10,15 @@ namespace ClassWork10022020_Event
     {
        // public event ExamDelegate examEvent;
 
-        public event EventHandler startEvent(string t);
-        public event EventHandler finishEvent;
-        public void Start(string task)
-        {
-            if(startEvent != null)
-            {
-                startEvent(task);
-            }
-        }
+        //public event EventHandler startEvent(string t);
+        //public event EventHandler finishEvent;
+        //public void Start(string task)
+        //{
+        //    if(startEvent != null)
+        //    {
+        //        startEvent(task);
+        //    }
+        //}
         
     }
 }
