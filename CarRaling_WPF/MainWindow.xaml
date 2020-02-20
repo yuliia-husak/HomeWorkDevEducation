@@ -5,40 +5,47 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarRaling_WPF"
         mc:Ignorable="d"
-        Title="CarRaling" Height="450" Width="800">
-    <Grid>       
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="20"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="20"/>
-                <ColumnDefinition/>                
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-        
-        <Grid Grid.Column="0" x:Name="gridRoadLeft"  Grid.RowSpan="4" Background="LightGray" >
+        Title="CarRaling" Height="650" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
 
+        <Grid Grid.Column="0" x:Name="gridRoadLeft"  Grid.RowSpan="3" Background="LightGray" >
+            <Image HorizontalAlignment="Left" Height="178" Margin="81,381,0,0" VerticalAlignment="Top" Width="75" Source=".\Image\Car1.jpg" Stretch="Uniform"/>
         </Grid>
 
-        <Grid Grid.Column="1" x:Name="gridLineLeft"  Grid.RowSpan="4" Background="White" >
-            
+        <Grid Grid.Column="1" x:Name="gridLineLeft"  Grid.RowSpan="3" Background="White" >
         </Grid>
 
-        <Grid Grid.Column="2" x:Name="gridRoadCenter"  Grid.RowSpan="4" Background="LightGray" >
-
+        <Grid Grid.Column="2" x:Name="gridRoadCenter"  Grid.RowSpan="3" Background="LightGray" >
+            <Image HorizontalAlignment="Left" Height="178" Margin="81,381,0,0" VerticalAlignment="Top" Width="75" Source=".\Image\Car2.jpg" Stretch="Uniform"/>
         </Grid>
 
-        <Grid Grid.Column="1" x:Name="gridLineRigt"  Grid.RowSpan="4" Background="White" >
-
+        <Grid Grid.Column="1" x:Name="gridLineRigt"  Grid.RowSpan="3" Background="White" >
         </Grid>
 
-        <Grid Grid.Column="4" x:Name="gridRoadRight"  Grid.RowSpan="4" Background="LightGray" >
+        <Grid Grid.Column="4" x:Name="gridRoadRight"  Grid.RowSpan="3" Background="LightGray" >
+            <Image HorizontalAlignment="Left" Height="178" Margin="81,381,0,0" VerticalAlignment="Top" Width="75" Source=".\Image\Car3.jpg" Stretch="Uniform"/>
+        </Grid>
 
+        <Grid x:Name="gridStart"  Grid.ColumnSpan="5" Grid.Row="3">
+            <Button Content="Game Start" 
+                    HorizontalAlignment="Left" Grid.Row="3" 
+                    VerticalAlignment="Top" Width="792" 
+                    Grid.ColumnSpan="5" Height="38" 
+                    Foreground="Red" FontSize="22"
+                    BorderBrush="Aqua" Background="LightBlue" Click="Button_Click"/>
         </Grid>
 
 

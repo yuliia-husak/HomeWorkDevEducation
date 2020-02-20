@@ -35,7 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClassLibraryCar">
+    <Reference Include="ClassLibraryCar, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ClassLibraryCar\bin\Release\ClassLibraryCar.dll</HintPath>
     </Reference>
     <Reference Include="System" />

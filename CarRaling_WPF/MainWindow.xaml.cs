@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ClassLibraryCar;
+using System.Threading;
 
 namespace CarRaling_WPF
 {
@@ -24,6 +25,13 @@ namespace CarRaling_WPF
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Car car1 = new Car();
+            Car car2 = new Car();
+            Car car3 = new Car();  
         }
     }
 }

@@ -14,10 +14,11 @@ namespace ClassLibraryCar
         int gamespeed = 0;
         Random r = new Random();
 
-        void moveCar(int speed)
+        public int moveCar(int speed)
         {            
-                int a = r.Next(0, 5);                
-                gamespeed += a;                
+           int a = r.Next(0, 5);                
+           gamespeed += a;
+           return a;
         }
     }
 }
