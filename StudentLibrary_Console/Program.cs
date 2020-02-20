@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StudentLibrary;
+//using StudentLibrary;
 
 namespace StudentLibrary_Console
 {
@@ -11,7 +11,7 @@ namespace StudentLibrary_Console
     {
         static void Main(string[] args)
         {    
-            List<Student> studentLibraries = new List<Student>();
+            //List<Student> studentLibraries = new List<Student>();
         }
     }
 }

@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-//using Cars;
+using ClassLibraryCar;
 
-namespace WpfApp1
+namespace CarRaling_WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,14 +24,6 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-
-        //Car_1 c = new Car_1();
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //c.Name = "BBB";
         }
     }
 }
