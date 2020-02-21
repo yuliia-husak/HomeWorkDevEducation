@@ -3,20 +3,23 @@
 namespace CarRaling
 {
     class Car
-    {        
-        int currentDistanse;
-        const int maxDistanse = 90;
-        bool stopedDistanse;
+    {       
+        public double Speed { get; set; }
+
+        public string Model { get; set; }
         public string Name { get; set; }
+
+        public double Time { get; set; }
 
         readonly CarBody carBody;
         
-        public Car(int left, int top, string n)
+        public Car(int left, int top, string n, string m)
         {
-            this.Name = n;
-            //engine = new Engine();
+            this.Speed = Game.RandomSpeed();
+            this.Model = m;
+            this.Name = n;            
             carBody = new CarBody(left, top);
-            currentDistanse = 0;
+           
         }
 
         public void Show(string name)
@@ -24,41 +27,6 @@ namespace CarRaling
             carBody.Draw(name);
         }
 
-        // Ускорение.
-        public int Acceleration()
-        {
-            int delta = Game.RandomSpeed();
-
-            if (stopedDistanse)
-            {
-                return 0;
-            }
-            else
-            {
-                currentDistanse += delta;
-                if (currentDistanse > maxDistanse)
-                {
-
-                    stopedDistanse = true;
-                    Console.Title = "Finish: " + Name;
-                    EngineIsDeadException ex = new EngineIsDeadException("Дистанция пройдена.");
-                    //ex.Data.Add("Время поломки   :", string.Format("Двигатель вышел из строя {0}", DateTime.Now));
-                    ex.Data.Add(" Гонка завершена :", string.Format("К финишу пришел первым номер: {0}", Name));
-
-                    throw ex;
-                }
-                else
-                {
-                    Console.Title = "До финиша: " + (maxDistanse-currentDistanse);
-                    return currentDistanse;
-                }
-            }   
-        }
-
-        // Торможение.
-        public void Braking()
-        {
-
-        }
+         
     }
 }

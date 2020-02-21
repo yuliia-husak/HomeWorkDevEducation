@@ -11,6 +11,7 @@ namespace CarRaling
     {
         static void Main()
         {
+            Console.OutputEncoding = Encoding.UTF8;
             Console.Title = "Car";
 
             // Задается размер окна.
