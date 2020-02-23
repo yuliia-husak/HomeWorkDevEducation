@@ -5,10 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83D39ADC-E086-41EB-8F64-EB28C67D6525}</ProjectGuid>
+    <ProjectGuid>{A6E8FFF7-D981-43D7-85C6-D92F8E76D3F7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CarRaling</RootNamespace>
-    <AssemblyName>CarRaling</AssemblyName>
+    <RootNamespace>_03_001_HomeWork_Collections_Iterator</RootNamespace>
+    <AssemblyName>03_001_HomeWork_Collections_Iterator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -49,14 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarRalingTest.cs" />
-    <Compile Include="Game\Car.cs" />
-    <Compile Include="Game\CarBody.cs" />
-    <Compile Include="Game\EngineIsDeadException.cs" />
-    <Compile Include="Game\Game.cs" />
-    <Compile Include="Game\Road.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task_1_Iterator\Aggregate.cs" />
+    <Compile Include="Task_1_Iterator\ConcreteAggregate.cs" />
+    <Compile Include="Task_1_Iterator\ConcreteIterator.cs" />
+    <Compile Include="Task_1_Iterator\Iterator.cs" />
+    <Compile Include="Task_2_UserCollection\NameCollection.cs" />
+    <Compile Include="Task_3_IColection\Collection.cs" />
+    <Compile Include="Task_3_IColection\MyCollection.cs" />
+    <Compile Include="Task_4_IList\AList.cs" />
+    <Compile Include="Task_4_IList\AListTest.cs" />
+    <Compile Include="Task_5_NameMonth\CollectionMonth.cs" />
+    <Compile Include="Task_5_NameMonth\CollectionMonthTest.cs" />
+    <Compile Include="Task_5_NameMonth\Element.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

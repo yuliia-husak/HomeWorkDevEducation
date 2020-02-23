@@ -72,37 +72,7 @@ namespace CarRaling
 
             SetTime();
 
-            //// Игровая петля.
-            //while (true)
-            //{
-            //    try
-            //    {
-            //        Thread.Sleep(5000);
-            //        //car1.Acceleration();
-            //        //car2.Acceleration();
-            //        //car3.Acceleration();
-            //        road.speed = 0;
-            //        getWinner();
-
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        road.speed = 0;
-            //        Console.SetCursorPosition(38, 20);
-            //        Console.BackgroundColor = ConsoleColor.Red;
-            //        Console.ForegroundColor = ConsoleColor.White;
-            //        Console.WriteLine(e.Message);
-            //        Console.BackgroundColor = ConsoleColor.Black;
-            //        Console.ForegroundColor = ConsoleColor.Gray;
-
-            //        Console.SetCursorPosition(0, 25);
-
-            //        foreach (DictionaryEntry de in e.Data)
-            //            Console.WriteLine("{0}: {1}", de.Key, de.Value);
-
-            //        break;
-            //    } 
-            //}            
+           
         }
 
         public void SetTime()

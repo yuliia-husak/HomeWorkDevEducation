@@ -5,10 +5,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{83D39ADC-E086-41EB-8F64-EB28C67D6525}</ProjectGuid>
+    <ProjectGuid>{A67BF43E-CDA6-49BA-BC76-415A2988B624}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CarRaling</RootNamespace>
-    <AssemblyName>CarRaling</AssemblyName>
+    <RootNamespace>Task_02_Queue</RootNamespace>
+    <AssemblyName>Task_02_Queue</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -49,14 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarRalingTest.cs" />
-    <Compile Include="Game\Car.cs" />
-    <Compile Include="Game\CarBody.cs" />
-    <Compile Include="Game\EngineIsDeadException.cs" />
-    <Compile Include="Game\Game.cs" />
-    <Compile Include="Game\Road.cs" />
+    <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queue.cs" />
+    <Compile Include="QueueTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
