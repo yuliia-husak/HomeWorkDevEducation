@@ -20,9 +20,21 @@ namespace CarRaling
             // Задается видимость курсора.
             Console.CursorVisible = true;
 
-            Game game = new Game();            
+            Game game = new Game();
+
+            game.AddCar(new Car(10, 35, "1", "BMV"));
+            game.AddCar(new Car(40, 35, "2", "Ferrary"));
+            game.AddCar(new Car(70, 35, "3", "Volga"));
             
             game.Run();
+            Thread.Sleep(3000);
+
+            game.GetTime();
+
+            Car vinCar = game.getWinner();
+            Thread.Sleep(1000);
+            Console.SetCursorPosition(10, 48);
+            Console.WriteLine($"First went the distance {vinCar.Model} during {vinCar.Time} seconds");
 
             // Delay.
             Console.Read();
