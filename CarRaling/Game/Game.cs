@@ -10,12 +10,13 @@ namespace CarRaling
     {
         LinkedList<Car> cars;
 
-        public double maxDistance = 100;
+        public double maxDistance ;
         public static int carsCount = 0;
         readonly Road road;
 
         public Game()
         {
+            maxDistance = 100;
             cars = new LinkedList<Car>();
             road = new Road();
         }
