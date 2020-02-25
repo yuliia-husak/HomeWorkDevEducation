@@ -1,0 +1,42 @@
+﻿<Window x:Class="Semaphore_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Semaphore_WPF"
+        mc:Ignorable="d"
+        Title="Semaphore Test" Height="450" Width="800" Background="LightGray">
+    <Grid Margin="10,0,-10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="232*"/>
+            <RowDefinition Height="53*"/>
+            <RowDefinition Height="64*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="256*"/>
+            <ColumnDefinition Width="271*"/>
+            <ColumnDefinition Width="265*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Working threads" Grid.Column="0" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Height="33" Width="246" FontSize="24" Padding="0"/>
+        <Label Content="Pending threads" Grid.Column="1" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Height="26" Width="246" FontSize="24" Padding="0"/>
+        <Label Content="Created threads" Grid.Column="2" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" Height="26" Width="246" FontSize="24" Padding="0"/>
+        <TextBox x:Name="txtWork" HorizontalAlignment="Left" Height="212" Margin="10" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" Grid.Column="0"/>
+        <TextBox x:Name="txtPend" HorizontalAlignment="Left" Height="212" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Grid.Column="1"/>
+        <TextBox x:Name="txtCreat" HorizontalAlignment="Left" Height="212" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Grid.Column="2" MouseDoubleClick="txtCreat_MouseDoubleClick" LostFocus="txtCreat_LostFocus"/>
+        <Label Content="Number of seats in Semaphore:" HorizontalAlignment="Left" Margin="10,15,0,0" Grid.Row="2" FontSize="24" Grid.ColumnSpan="2" Width="502"/>
+        <ComboBox x:Name="cmbAmountThread" HorizontalAlignment="Left" Margin="29,5,0,0" Grid.Row="3" VerticalAlignment="Top" Width="217" Height="32" FontSize="22">
+            
+                <ComboBoxItem x:Name="cmb2" Content="2" FontSize="22" Selected="cmb2_Selected"></ComboBoxItem>
+           
+            
+                <ComboBoxItem x:Name="cmb3" Content="3" FontSize="22" Selected="cmb3_Selected"></ComboBoxItem>
+            
+                <ComboBoxItem x:Name="cmb4" Content="4" FontSize="22" Selected="cmb4_Selected"></ComboBoxItem>
+           
+            
+        </ComboBox>
+        <Button x:Name="btnCreate" Grid.ColumnSpan="2" Content="Create stream" Grid.Column="1" HorizontalAlignment="Left" Height="48" Margin="150,6,0,0" Grid.Row="3" VerticalAlignment="Top" Width="358" FontSize="24" Click="btnCreate_Click"/>
+
+    </Grid>
+</Window>
