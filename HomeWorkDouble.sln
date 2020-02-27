@@ -245,6 +245,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork26022020_Mutex", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork26022020_Semaphore_Read", "ClassWork26022020_Semaphore_Read\ClassWork26022020_Semaphore_Read.csproj", "{04B594F3-676A-4B8D-A2E8-22189895C74F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassWork27022020_ManualResetEvent", "ClassWork27022020_ManualResetEvent\ClassWork27022020_ManualResetEvent.csproj", "{53ED7A2E-E1BE-41A4-B7F2-B4D606ED94DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -663,6 +665,10 @@ Global
 		{04B594F3-676A-4B8D-A2E8-22189895C74F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04B594F3-676A-4B8D-A2E8-22189895C74F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04B594F3-676A-4B8D-A2E8-22189895C74F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53ED7A2E-E1BE-41A4-B7F2-B4D606ED94DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53ED7A2E-E1BE-41A4-B7F2-B4D606ED94DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53ED7A2E-E1BE-41A4-B7F2-B4D606ED94DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53ED7A2E-E1BE-41A4-B7F2-B4D606ED94DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -786,6 +792,7 @@ Global
 		{B5A28685-70BB-4C3A-8CA3-FA9C5CC5B0C6} = {A0498ADD-2E61-4D3E-89DD-162595C90E33}
 		{3394422B-9F7C-4F09-A3F8-3D195E67C823} = {A0498ADD-2E61-4D3E-89DD-162595C90E33}
 		{04B594F3-676A-4B8D-A2E8-22189895C74F} = {A0498ADD-2E61-4D3E-89DD-162595C90E33}
+		{53ED7A2E-E1BE-41A4-B7F2-B4D606ED94DF} = {A0498ADD-2E61-4D3E-89DD-162595C90E33}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9BA51885-EB3C-44A3-984A-D36717A6B89B}
