@@ -17,7 +17,6 @@ namespace ClassWork26022020_Multithreaded_Processing
         {
             int m = (int)some_data;
             threads = new Thread[m];
-
         }
 
        
@@ -27,13 +26,10 @@ namespace ClassWork26022020_Multithreaded_Processing
             VectorArray vectorArray1 = new VectorArray(100);
             VectorArray vectorArray2 = new VectorArray(1000);
             VectorArray vectorArray3 = new VectorArray(100000);
-
             
             vectorArray1.MultiVector();
             vectorArray1.Show();
             Thread thr = new Thread(Run);
-            
-            
 
             Console.ReadKey();
         }

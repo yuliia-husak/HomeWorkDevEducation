@@ -122,10 +122,37 @@ namespace _03_001_HomeWork_Collections_Iterator
                     element.AmountDay);
             }
 
-           
-            Console.WriteLine(new string('-', 5));
+            Console.Write("Enter number month: ");
+            int x = int.Parse(Console.ReadLine());
+            foreach (Element element in month)
+            {
+                if (element.Id == x)
+                {
+                    Console.WriteLine("This month {0}",                    
+                    element.Name);
+                }
+                
+            }
 
-            
+            Console.Write("Enter amount days of month: ");
+            int y = int.Parse(Console.ReadLine());
+            foreach (Element element in month)
+            {
+                if (element.AmountDay == y)
+                {
+                    Console.WriteLine("This month {0}",
+                    element.Name);
+                }
+
+            }
+            Console.WriteLine(new string('-', 5));
+            int actual = 0;
+            foreach (Element element in month)
+            {
+                actual++;
+            }
+
+            Console.WriteLine(actual);
 
 
             Console.ReadLine();

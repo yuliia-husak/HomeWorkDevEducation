@@ -54,7 +54,6 @@ namespace _03_001_HomeWork_Collections_Iterator.Task_5_NameMonth
 		public void Dispose()
 		{
 			((IEnumerator)this).Reset();
-		}
-
+		}		
 	}
 }

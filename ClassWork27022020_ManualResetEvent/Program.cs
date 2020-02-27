@@ -13,6 +13,7 @@ namespace ClassWork27022020_ManualResetEvent
         static void Main(string[] args)
         {
             Console.OutputEncoding = Encoding.UTF8;
+
             Console.WriteLine("Событие с ручным сбросом");
             ManualResetEvent mre = new ManualResetEvent(true);            
 
@@ -21,7 +22,16 @@ namespace ClassWork27022020_ManualResetEvent
                 ThreadPool.QueueUserWorkItem(SomeMethod, mre);                
             }
 
+            //****************************************************************************************
 
+            Console.WriteLine("Основной поток: ставим в очередь рабочий элемент");
+            Random r = new Random();
+            for (int i = 0; i < 10; ++i)
+                ThreadPool.QueueUserWorkItem(WorkingElementMethod, r.Next(10));
+            Console.WriteLine("Основной поток: выполняем другиу задачи");
+            Thread.Sleep(3000);
+            Console.WriteLine("Нажмите любую клавишу для продолжения...");
+                       
             Console.ReadKey();
         }
 
@@ -36,6 +46,12 @@ namespace ClassWork27022020_ManualResetEvent
             }
             else Console.WriteLine("Поток {0} опоздал",
                 Thread.CurrentThread.ManagedThreadId);  
+        }
+
+        private static void WorkingElementMethod(object state)
+        {
+            Console.WriteLine("\tпоток: {0} состояние = {1}", Thread.CurrentThread.ManagedThreadId, state);
+            Thread.Sleep(1000);
         }
     }
 }
