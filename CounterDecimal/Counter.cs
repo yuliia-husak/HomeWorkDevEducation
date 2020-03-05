@@ -56,9 +56,9 @@ namespace CounterDecimal
         {
             //if (count > maxDiapason || count < minDiapason)
             //    throw new ArgumentException("Недопустимое значение счетчика");
-            this.count = 1;
+            this.count = 5;
             this.minDiapason = 1;
-            this.maxDiapason = 1;
+            this.maxDiapason = 10;
         }
 
         public Counter(int count) : this()
@@ -95,6 +95,11 @@ namespace CounterDecimal
         public void Password()
         {
             Console.WriteLine("Counter {0}\t minDiapason = {1}, maxDiapason = {2}", count, minDiapason, maxDiapason);
+        }
+
+        public override string ToString()
+        {
+            return string.Format("0x{0:X} minDiapason = Ox{1:X}, maxDiapason = Ox{2:X}", this.count, this.minDiapason, this.maxDiapason);
         }
     }
 }

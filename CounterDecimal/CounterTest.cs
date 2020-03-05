@@ -33,7 +33,6 @@ namespace CounterDecimal
         [Test]
         public static void CounterExeption()
         {
-
             try
             {
                 Counter counter = new Counter(10, 1, 8);

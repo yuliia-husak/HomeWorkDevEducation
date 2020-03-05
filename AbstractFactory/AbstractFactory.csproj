@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00F67271-96E5-4211-9DB7-87F0B21D68A4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AbstractFactory</RootNamespace>
+    <AssemblyName>AbstractFactory</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IPcConfigure\AbstractClasses\AbstractBox.cs" />
+    <Compile Include="IPcConfigure\AbstractClasses\AbstractFactory.cs" />
+    <Compile Include="IPcConfigure\AbstractClasses\AbstractHdd.cs" />
+    <Compile Include="IPcConfigure\AbstractClasses\AbstractMainBoard.cs" />
+    <Compile Include="IPcConfigure\AbstractClasses\AbstractMemory.cs" />
+    <Compile Include="IPcConfigure\AbstractClasses\AbstractPc.cs" />
+    <Compile Include="IPcConfigure\AbstractClasses\AbstractProcessor.cs" />
+    <Compile Include="IPcConfigure\Client.cs" />
+    <Compile Include="IPcConfigure\ConcreteFactory.cs" />
+    <Compile Include="IPcConfigure\ConcreteHomePcFactory\ConcreteHomePcFactory.cs" />
+    <Compile Include="IPcConfigure\ConcreteHomePcFactory\HomePcFactoryBox.cs" />
+    <Compile Include="IPcConfigure\ConcreteHomePcFactory\HomePcFactoryHdd.cs" />
+    <Compile Include="IPcConfigure\ConcreteHomePcFactory\HomePcFactoryMainBoard.cs" />
+    <Compile Include="IPcConfigure\ConcreteHomePcFactory\HomePcFactoryMemory.cs" />
+    <Compile Include="IPcConfigure\ConcreteHomePcFactory\HomePcFactoryPc.cs" />
+    <Compile Include="IPcConfigure\ConcreteHomePcFactory\HomePcFactoryProcessor.cs" />
+    <Compile Include="IPcConfigure\ConcreteOfficePcFactory\ConcreteOfficePcFactory.cs" />
+    <Compile Include="IPcConfigure\ConcreteOfficePcFactory\OfficePcFactoryBox.cs" />
+    <Compile Include="IPcConfigure\ConcreteOfficePcFactory\OfficePcFactoryHdd.cs" />
+    <Compile Include="IPcConfigure\ConcreteOfficePcFactory\OfficePcFactoryMainBoard.cs" />
+    <Compile Include="IPcConfigure\ConcreteOfficePcFactory\OfficePcFactoryMemory.cs" />
+    <Compile Include="IPcConfigure\ConcreteOfficePcFactory\OfficePcFactoryPc.cs" />
+    <Compile Include="IPcConfigure\ConcreteOfficePcFactory\OfficePcFactoryProcessor.cs" />
+    <Compile Include="IPcConfigure\IPcFactory.cs" />
+    <Compile Include="IPcConfigure\PcConfigurator.cs" />
+    <Compile Include="IPcConfigure\Program.cs" />
+    <Compile Include="IPcConfigure\Properties\AssemblyInfo.cs" />
+    <Compile Include="MyAbstractFactory\AbstractClasses\AbstractBottle.cs" />
+    <Compile Include="MyAbstractFactory\AbstractClasses\AbstractCover.cs" />
+    <Compile Include="MyAbstractFactory\AbstractClasses\AbstractFactory.cs" />
+    <Compile Include="MyAbstractFactory\AbstractClasses\AbstractLabel.cs" />
+    <Compile Include="MyAbstractFactory\AbstractClasses\AbstractWater.cs" />
+    <Compile Include="MyAbstractFactory\Client.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteCocaCola\CocaColaBottle.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteCocaCola\CocaColaCover.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteCocaCola\CocaColaFactory.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteCocaCola\CocaColaLabel.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteCocaCola\CocaColaWater.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteFanta\FantaBottle.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteFanta\FantaCover.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteFanta\FantaFactory.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteFanta\FantaLabel.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteFanta\FantaWater.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteSchweppes\SchweppesBottle.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteSchweppes\SchweppesCover.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteSchweppes\SchweppesFactory.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteSchweppes\SchweppesLabel.cs" />
+    <Compile Include="MyAbstractFactory\ConcreteSchweppes\SchweppesWater.cs" />
+    <Compile Include="MyAbstractFactory\Program.cs" />
+    <Compile Include="MyAbstractFactory\Properties\AssemblyInfo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="IPcConfigure\App.config" />
+    <None Include="IPcConfigure\bin\Debug\IPcConfigure.exe.config" />
+    <None Include="IPcConfigure\IPcConfigure.csproj" />
+    <None Include="IPcConfigure\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="IPcConfigure\obj\Debug\IPcConfigure.csproj.CoreCompileInputs.cache" />
+    <None Include="IPcConfigure\obj\Debug\IPcConfigure.csprojAssemblyReference.cache" />
+    <None Include="MyAbstractFactory\App.config" />
+    <None Include="MyAbstractFactory\bin\Debug\MyAbstractFactory.exe.config" />
+    <None Include="MyAbstractFactory\MyAbstractFactory.csproj" />
+    <None Include="MyAbstractFactory\obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="MyAbstractFactory\obj\Debug\MyAbstractFactory.csproj.CoreCompileInputs.cache" />
+    <None Include="MyAbstractFactory\obj\Debug\MyAbstractFactory.csprojAssemblyReference.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IPcConfigure\bin\Debug\IPcConfigure.exe" />
+    <Content Include="IPcConfigure\bin\Debug\IPcConfigure.pdb" />
+    <Content Include="IPcConfigure\obj\Debug\IPcConfigure.csproj.FileListAbsolute.txt" />
+    <Content Include="IPcConfigure\obj\Debug\IPcConfigure.exe" />
+    <Content Include="IPcConfigure\obj\Debug\IPcConfigure.pdb" />
+    <Content Include="MyAbstractFactory\bin\Debug\MyAbstractFactory.exe" />
+    <Content Include="MyAbstractFactory\bin\Debug\MyAbstractFactory.pdb" />
+    <Content Include="MyAbstractFactory\obj\Debug\MyAbstractFactory.csproj.FileListAbsolute.txt" />
+    <Content Include="MyAbstractFactory\obj\Debug\MyAbstractFactory.exe" />
+    <Content Include="MyAbstractFactory\obj\Debug\MyAbstractFactory.pdb" />
+    <Content Include="MyAbstractFactory\obj\Debug\TempPE\Model1.Designer.cs.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="IPcConfigure\bin\Release\" />
+    <Folder Include="IPcConfigure\obj\Debug\TempPE\" />
+    <Folder Include="MyAbstractFactory\bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
