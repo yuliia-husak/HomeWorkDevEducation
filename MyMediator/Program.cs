@@ -22,10 +22,7 @@ namespace MyMediator
             mediator.ClimateControl = climate;
 
             alarm.AlarmEvent();
-            //coffemaker.CoffeeTurn("I will do ");
-            //shower.WaterHeating("I will do ");
-            //climate.TemperatDay("Day ");
-
+            
             Console.ReadKey();
         }
     }
