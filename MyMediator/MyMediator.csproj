@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10D9DBF7-ADB0-44A8-9E7F-38E66822D1BD}</ProjectGuid>
+    <ProjectGuid>{E5DB459B-426B-4174-A445-121DE3525D45}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>FacadeHomeTheater</RootNamespace>
-    <AssemblyName>FacadeHomeTheater</AssemblyName>
+    <RootNamespace>MyMediator</RootNamespace>
+    <AssemblyName>MyMediator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HomeTheaterFacade.cs" />
+    <Compile Include="ConcreteComposition\ClimateControl.cs" />
+    <Compile Include="ConcreteComposition\CoffeMaker.cs" />
+    <Compile Include="ConcreteComposition\Alarm.cs" />
+    <Compile Include="Composition.cs" />
+    <Compile Include="ConcreteSmartHome.cs" />
+    <Compile Include="MediatorSmartHome.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SybSystem\Tuner.cs" />
-    <Compile Include="SybSystem\Screen.cs" />
-    <Compile Include="SybSystem\Subwoofer.cs" />
+    <Compile Include="ConcreteComposition\Shower.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

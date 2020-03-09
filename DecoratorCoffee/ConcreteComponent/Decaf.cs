@@ -13,6 +13,11 @@ namespace DecoratorCoffee
             description = "Decaf coffee";
         }
 
+        public new string GetDescription()
+        {
+            return description;
+        }
+
         public override double cost()
         {
             return 10.00;

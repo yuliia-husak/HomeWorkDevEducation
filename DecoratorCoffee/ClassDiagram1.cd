@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DecoratorCoffee.Bevegare">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Bevegare.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.DarkRoast">
+    <Position X="2.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteComponent\DarkRoast.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.Decaf">
+    <Position X="4.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteComponent\Decaf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.Espresso">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteComponent\Expresso.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.HouseBlind">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteComponent\HouseBlend.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.Mocha">
+    <Position X="12" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteDecorator\Mocha.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.CondimentDecorator">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAQAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>CondimentDecorator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.Program">
+    <Position X="15" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.ConcreteDecorator.Chocolate">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteDecorator\Chocolate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.ConcreteDecorator.Milk">
+    <Position X="14" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteDecorator\Milk.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DecoratorCoffee.ConcreteDecorator.Whip">
+    <Position X="16.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ConcreteDecorator\Whip.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
