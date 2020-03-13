@@ -1,0 +1,16 @@
+﻿<Window x:Class="ClassWork13032020_MethodKramera.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClassWork13032020_MethodKramera"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Считать из файла" HorizontalAlignment="Left" Height="30" Margin="52,24,0,0" VerticalAlignment="Top" Width="241" Click="Button_Click"/>
+        <TextBox x:Name="txt0" HorizontalAlignment="Left" Height="59" Margin="52,93,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="693"/>
+        <TextBox x:Name="txt1" HorizontalAlignment="Left" Height="51" Margin="52,174,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="693"/>
+        <TextBox x:Name="txt2" HorizontalAlignment="Left" Height="51" Margin="52,271,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="693"/>
+
+    </Grid>
+</Window>

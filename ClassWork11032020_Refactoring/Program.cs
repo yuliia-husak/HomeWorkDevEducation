@@ -26,7 +26,7 @@ namespace ClassWork11032020_Refactoring
 
             customer.Rentals = rental;
             Console.WriteLine(customer.Statement());
-
+           
             // Delay.
             Console.ReadKey();
         }
