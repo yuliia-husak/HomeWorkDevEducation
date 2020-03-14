@@ -5,105 +5,40 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ListBasedQueue
-{
-    public class Deque<T>
-    {
-        LinkedList<T> _items = new LinkedList<T>();
-
-        public void EnqueueFirst(T value)
-        {
-            _items.AddFirst(value);
-        }
-
-        public void EnqueueLast(T value)
-        {
-            _items.AddLast(value);
-        }
-
-        public T DequeueFirst()
-        {
-            if (_items.Count == 0)
-            {
-                throw new InvalidOperationException("Очередь пуста");
-            }
-
-            T temp = _items.First.Value;
-            _items.RemoveFirst();
-
-            return temp;
-        }
-
-        public T DequeueLast()
-        {
-            if (_items.Count == 0)
-            {
-                throw new InvalidOperationException("Очередь пуста"); //!!!!!
-            }
-
-            T temp = _items.Last.Value;
-            _items.RemoveLast();
-            return temp;
-        }
-
-        public T PeekFirst()
-        {
-            if (_items.Count == 0)
-            {
-                throw new InvalidOperationException("Очередь пуста");
-            }
-
-            return _items.First.Value;
-        }
-
-        public T PeekLast()
-        {
-            if (_items.Count == 0)
-            {
-                throw new InvalidOperationException("Очередь пуста");
-            }
-            return _items.Last.Value;
-        }
-
-        public int Count
-        {
-            get
-            {
-                return _items.Count;
-            }
-        }
-
-
-    }
-
-
-
+{  
     class Program
     {
         static void Main(string[] args)
         {
+            MyQeque<int> myQeque = new MyQeque<int>();
 
+            myQeque.Enqueue(1);    
+            myQeque.Enqueue(2);    
+            myQeque.Enqueue(3);   
+            myQeque.Enqueue(4);
+            myQeque.Enqueue(5);
+            Console.WriteLine(new string('-', 20));
+            myQeque.Show();
+            Console.WriteLine(new string('-', 20));
 
-            Deque<int> instance = new Deque<int>();
+            Console.WriteLine(myQeque.Peek()); 
+            Console.WriteLine(myQeque.Dequeue());
+            Console.WriteLine(new string('-', 20));
+            myQeque.Show();
+            Console.WriteLine(new string('-', 20));
 
-            // First -> указатель на начало очереди
-            // Last  -> указатель на конец очереди
+            myQeque.Enqueue(6);     
+            myQeque.Enqueue(7);     
+            myQeque.Enqueue(8);
+            Console.WriteLine(new string('-', 20));
+            myQeque.Show();
+            Console.WriteLine(new string('-', 20));
 
-            instance.EnqueueLast(1);    // -> -> -> -> -> -> ->  
-            instance.EnqueueLast(2);    // Двусвязная очередь: 5 -> 4 -> 3 -> 2 -> 1
-            instance.EnqueueLast(3);    // -> -> -> -> -> -> ->
-            instance.EnqueueLast(4);
-            instance.EnqueueLast(5);
-
-            Console.WriteLine(instance.PeekFirst()); // возвращает первый элемент очереди
-            Console.WriteLine(instance.PeekLast());  // возвращает последний элемент очереди 
-
-            instance.EnqueueFirst(6);     // -> -> -> -> -> -> -> 
-            instance.EnqueueFirst(7);     // Двусвязная очередь: 5 -> 4 -> 3 -> 2 -> 1 -> 6 -> 7 -> 8
-            instance.EnqueueFirst(8);     // -> -> -> -> -> -> ->
-
-
-            Console.WriteLine(instance.PeekFirst()); // возвращает первый элемент очереди
-            Console.WriteLine(instance.PeekLast());  // возвращает последний элемент очереди 
+            Console.WriteLine(myQeque.Peek()); 
+            Console.WriteLine(myQeque.Dequeue());
+            Console.WriteLine(new string('-', 20));
+            myQeque.Show();
+            Console.WriteLine(new string('-', 20));
 
             Console.ReadKey();
         }
