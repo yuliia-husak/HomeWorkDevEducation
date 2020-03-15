@@ -23,6 +23,14 @@ namespace TextEditor_WPF
         public MainWindow()
         {
             InitializeComponent();
+            Microsoft.Win32.OpenFileDialog openFileDialog = new Microsoft.Win32.OpenFileDialog();
+            openFileDialog.ShowDialog();
+        }
+
+        private void lstVw_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+
         }
     }
 }
