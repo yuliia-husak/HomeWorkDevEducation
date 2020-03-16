@@ -36,9 +36,7 @@ namespace AVLTreeNode
             {
                 Console.WriteLine(i);
             }
-
-            instance.Vershina();
-
+            
             Console.ReadKey();
         }
     }

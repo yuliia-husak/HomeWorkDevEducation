@@ -40,5 +40,35 @@ namespace AVLTreeNode
             int sum = instance.Sum();
             Assert.AreEqual(sum, actual);
         }
+
+        [Test]
+        public void SumAllElemTest_Return_True()
+        {
+            AVLTree<int> instance = new AVLTree<int>
+            {
+                21,
+                10,
+                28,
+                6,
+                15,
+                25,
+                32,
+                3,
+                9,
+                12,
+                18,
+                23,
+                26,
+                30,
+                34,
+                7,
+                17,
+                24,
+                29
+            };
+            
+            
+            Assert.AreEqual(instance.Contains(6), true);
+        }
     }
 }

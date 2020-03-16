@@ -34,13 +34,19 @@ namespace _01_BTree_TDD
 
             foreach (var i in instance)
             {
-                Console.WriteLine(i);
+                Console.Write(i + " ");
             }
 
-            Console.WriteLine(instance.Sum());
-            Console.WriteLine(instance.Min());
+            Console.WriteLine("\n---------------------------");
 
-            Console.WriteLine(instance.SumAllElement());
+            instance.PreorderPrint();
+
+            //Console.WriteLine(instance.Sum());
+            //Console.WriteLine(instance.Min());
+
+            //Console.WriteLine(instance.SumAllElement());
+
+            //instance.PrintTree();
             Console.ReadLine();
         }
     }
