@@ -10,7 +10,7 @@ namespace _01_BTree_TDD
     public class BinaryTree<T> : IEnumerable<T> where T : IComparable<T>
     {
         private BinaryTreeNode<T> _head;
-        private int _count;
+        private int _count;        
 
         #region Добавление нового узла дерева
 
@@ -68,15 +68,239 @@ namespace _01_BTree_TDD
                     AddTo(node.Right, value);
                 }
             }
+        }        
+
+
+        //находим колличество заданного числа
+        internal int AmountNumber(T value)
+        {
+            int doublenumber=0;            
+
+            BinaryTreeNode<T> current = _head;
+            BinaryTreeNode<T> parent;
+            parent = null;
+
+            while (current != null)
+            {
+                int result = current.CompareTo(value);
+                if (result > 0)
+                {
+                    // Если искомое значение меньше значение текущего узла - переходим к левому потомку.             
+
+                    parent = current;
+                    current = current.Left;
+                }
+                else if (result < 0)
+                {
+                    // Если искомое значение больше значение текущего узла - переходим к правому потомку.
+
+                    parent = current;
+                    current = current.Right;
+                }                
+                else
+                {
+                    parent = current;
+                    current = current.Right;
+                    doublenumber++;
+                    // Искомый элемент найден             
+                    
+                }
+            }            
+            return doublenumber;     
         }
 
+        internal bool TreeSymetrical()
+        {
+            if (_head != null)
+            {
+                Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+
+                queue.Enqueue(_head);
+
+                while (queue.Count != 0)
+                {
+                    BinaryTreeNode<T> temp = queue.Dequeue();
+
+                    if ((temp.LeftHeight - temp.RightHeight)>1 || (temp.LeftHeight - temp.RightHeight) < -1)
+                    {
+                        return false;
+                    }
+
+                    if (temp.Left != null)
+                        queue.Enqueue(temp.Left);
+
+                    if (temp.Right != null)
+                        queue.Enqueue(temp.Right);
+                }
+                return true;
+            }
+            return false;
+        }
+
+        //-------------------------------------------------
+
+            //высота произвольного дерева
+        int HeightTree(BinaryTreeNode<T> node)
+        {
+            if (node == null) return -1;
+            else
+            {
+                int i, j;
+                i = HeightTree(node.Left);
+                j = HeightTree(node.Right);
+                if (i > j) return i + 1;
+                return j + 1;
+            }
+        }
+
+        //определение колличества элементов на к-м уровне дерева
+        int CountElement(BinaryTreeNode<T> node, int level, int k)
+        {
+            if (node == null || level > k) return 0;
+            else
+                if (level == k) return 1;
+            else
+                return CountElement(node.Left, level + 1, k) + CountElement(node.Right, level + 1, k);
+        }
+        public int LevelMaxElement()
+        {
+            BinaryTreeNode<T> node = _head;
+            int maxElement = CountElement(node, 0, 1);
+
+            return maxElement;
+        }
+        //--------------------------------------------
+        internal int MaxCountIdentical()
+        {
+            int maxCount = 0;
+            if (_head != null)
+            {
+                Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+
+                queue.Enqueue(_head);
+
+                while (queue.Count != 0)
+                {
+                    BinaryTreeNode<T> temp = queue.Dequeue();
+
+                    if ((AmountNumber(temp.Value)) > 1)
+                    {
+                       if(maxCount < (AmountNumber(temp.Value))) maxCount = (AmountNumber(temp.Value));
+                    }
+
+                    if (temp.Left != null)
+                        queue.Enqueue(temp.Left);
+
+                    if (temp.Right != null)
+                        queue.Enqueue(temp.Right);
+                }
+            }
+
+            return maxCount;
+        }
+
+        internal bool MaxIdentical()
+        {
+            if (_head != null)
+            {
+                Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+
+                queue.Enqueue(_head);
+
+                while (queue.Count != 0)
+                {
+                    BinaryTreeNode<T> temp = queue.Dequeue();
+
+                    if((AmountNumber(temp.Value))>1) return true;
+
+                    if (temp.Left != null)
+                        queue.Enqueue(temp.Left);
+
+                    if (temp.Right != null)
+                        queue.Enqueue(temp.Right);
+                }
+            }
+
+            return false;
+        }
+
+        //------------------------------------------------------------------------
+        /// <summary>
+        /// Рекурсивный поиск
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        int Search(BinaryTreeNode<T> node, T x)
+        {
+            if (node == null) return 0;
+            else if ((node.CompareTo(x) == 0)) { return 1; }
+            else if (node.CompareTo(x) > 0) return Search(node.Left, x);
+            else
+                return Search(node.Right, x);
+        }
+
+        public bool SSS(T value)
+        {
+            BinaryTreeNode<T> node = _head;            
+            if ((Search(node, value)) == 1) return true;
+            else return false;
+        }
+        //------------------------------------------------------------------------
+
+
+        //------------------------------------------------------------------------
+        /// <summary>
+        /// Итеративный поиск элемента
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool Contains(T value)
+        {
+            BinaryTreeNode<T> parent;
+            return FindWithParent(value, out parent) != null;
+        }
+
+        private BinaryTreeNode<T> FindWithParent(T value, out BinaryTreeNode<T> parent)
+        {
+            // Поиск значения в дереве.     
+
+            BinaryTreeNode<T> current = _head;
+            parent = null;
+
+            while (current != null)
+            {
+                int result = current.CompareTo(value);
+                if (result > 0)
+                {
+                    // Если искомое значение меньше значение текущего узла - переходим к левому потомку.             
+
+                    parent = current;
+                    current = current.Left;
+                }
+                else if (result < 0)
+                {
+                    // Если искомое значение больше значение текущего узла - переходим к правому потомку.
+
+                    parent = current;
+                    current = current.Right;
+                }
+                else
+                {
+                    // Искомый элемент найден             
+                    break;
+                }
+            }
+            return current;
+        }
+        //------------------------------------------------------------------------
         #endregion
 
         //нумератор
         public IEnumerator<T> GetEnumerator()
         {
-            return InOrderTraversal();
-            //return LevelOrderPrint();
+            //return InOrderTraversal();
+            return LevelOrderPrint();
             
         }
         
@@ -153,10 +377,9 @@ namespace _01_BTree_TDD
             }
         }
 
-        public void PreorderPrint()
+        public int BranchComprarisonChild()
         {
-            int amountL = 0;
-            int amountR = 0;
+            int CountChild = 0;
             if (_head != null)
             {
                 Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
@@ -167,86 +390,47 @@ namespace _01_BTree_TDD
                 {
                     BinaryTreeNode<T> temp = queue.Dequeue();
 
-                    if (temp.Left != null)
+                    if (temp.LeftHeight != temp.RightHeight)
                     {
-                        Stack<BinaryTreeNode<T>> stack = new Stack<BinaryTreeNode<T>>();
-                        BinaryTreeNode<T> current = temp.Left;                        
+                        Console.Write(temp.Value + " ");
+                        CountChild++;
+                    }
 
-                        bool goLeftNext = true;
-
-                        stack.Push(current);
-
-                        while (stack.Count > 0)
-                        {
-                            if (goLeftNext)
-                            {
-                                while (current.Left != null)
-                                {
-                                    stack.Push(current);
-                                    amountL++;
-                                    current = current.Left;
-                                }
-                            }
-
-                            amountL++;
-                            if (current.Right != null)
-                            {
-                                current = current.Right;
-                                goLeftNext = true;
-                            }
-                            else
-                            {
-                                current = stack.Pop();
-                                goLeftNext = false;
-                            }
-                        }
+                    if (temp.Left != null)
                         queue.Enqueue(temp.Left);
 
-                        if (temp.Right != null)
-                        {
-                            Stack<BinaryTreeNode<T>> stackR = new Stack<BinaryTreeNode<T>>();
-                            BinaryTreeNode<T> currentr = temp.Right;                            
-
-                            goLeftNext = true;
-
-                            stack.Push(current);
-
-                            while (stack.Count > 0)
-                            {
-                                if (goLeftNext)
-                                {
-                                    while (current.Left != null)
-                                    {
-                                        stack.Push(current);
-                                        current = current.Left;
-                                    }
-                                }
-                                
-                                amountR++;
-
-                                if (current.Right != null)
-                                {
-                                    current = current.Right;
-                                    goLeftNext = true;
-                                }
-                                else
-                                {
-                                    current = stack.Pop();
-                                    goLeftNext = false;
-                                }
-                            }
-                        }
+                    if (temp.Right != null)
                         queue.Enqueue(temp.Right);
-                        if (amountL != amountR)
-                        {
-                            Console.WriteLine(temp.Value);
-                        }
-                        
-                    }
+                }
+                return CountChild;
+            }
+            return 0;
+        }
+
+        public void BranchComprarison()
+        {
+            if (_head != null)
+            {
+                Queue<BinaryTreeNode<T>> queue = new Queue<BinaryTreeNode<T>>();
+
+                queue.Enqueue(_head);
+
+                while (queue.Count != 0)
+                {
+                    BinaryTreeNode<T> temp = queue.Dequeue();
+
+                    if (temp.LeftHeight != temp.RightHeight) Console.Write(temp.Value + " ");
+
+                    if (temp.Left != null)
+                        queue.Enqueue(temp.Left);
+
+                    if (temp.Right != null)
+                        queue.Enqueue(temp.Right);
                 }
             }
         }
 
+        
 
         #region Удаление дерева
 
@@ -302,5 +486,5 @@ namespace _01_BTree_TDD
                 PrintTree(startNode.Right, indent, Side.Right);
             }
         }
-    }
+    }    
 }

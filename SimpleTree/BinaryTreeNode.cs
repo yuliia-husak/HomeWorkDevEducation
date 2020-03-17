@@ -52,8 +52,11 @@ namespace SimpleTree
         /// <summary>
         /// Розташування вузла відносно батьківського 
         /// </summary>
-        public Side? NodeSide => ParentNode == null ? (Side?)null
-            : ParentNode.LeftNode == this ? Side.Left : Side.Right;
+        public Side? NodeSide => 
+            ParentNode == null
+            ? (Side?)null
+            : ParentNode.LeftNode == this 
+            ? Side.Left : Side.Right;
 
         /// <summary>
         /// Перетворення екземпляра класу в рядок

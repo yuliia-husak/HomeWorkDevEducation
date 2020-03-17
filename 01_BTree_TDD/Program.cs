@@ -24,11 +24,11 @@ namespace _01_BTree_TDD
             instance.Add(12);
             instance.Add(18);
             instance.Add(23);
-            instance.Add(26);
+            instance.Add(26);//26
             instance.Add(30);
             instance.Add(34);
             instance.Add(7);
-            instance.Add(17);
+            instance.Add(17);//17
             instance.Add(24);
             instance.Add(29);
 
@@ -38,15 +38,32 @@ namespace _01_BTree_TDD
             }
 
             Console.WriteLine("\n---------------------------");
+            Console.WriteLine("Вершины с неравными потомками: ");
+            instance.BranchComprarisonChild();
 
-            instance.PreorderPrint();
+            Console.WriteLine("\n---------------------------");
+            Console.Write("Amount number 9 in tree: ");
+            int a= instance.AmountNumber(9);
+            Console.WriteLine(a);
 
-            //Console.WriteLine(instance.Sum());
-            //Console.WriteLine(instance.Min());
+            Console.WriteLine("\n---------------------------");
+            Console.WriteLine("Есть ли данные в дереве одиннаковые: ");
+            if (instance.MaxIdentical()) Console.WriteLine(instance.MaxIdentical());
+            else Console.WriteLine("No identical");
 
-            //Console.WriteLine(instance.SumAllElement());
+            Console.WriteLine("\n---------------------------");
+            Console.Write("Максимальное число одиннаковых данные ");
+            int b = instance.MaxCountIdentical();
+            Console.WriteLine(b);
 
-            //instance.PrintTree();
+            Console.WriteLine("\n---------------------------");
+            Console.Write("This tree symetrical: ");
+            Console.WriteLine(instance.TreeSymetrical());
+
+            Console.WriteLine("\n---------------------------");
+            Console.WriteLine(instance.LevelMaxElement());
+
+
             Console.ReadLine();
         }
     }
