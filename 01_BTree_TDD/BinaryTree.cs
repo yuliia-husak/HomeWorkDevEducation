@@ -161,15 +161,41 @@ namespace _01_BTree_TDD
                 if (level == k) return 1;
             else
                 return CountElement(node.Left, level + 1, k) + CountElement(node.Right, level + 1, k);
+            
         }
         public int LevelMaxElement()
         {
             BinaryTreeNode<T> node = _head;
             int maxElement = CountElement(node, 0, 1);
-
+            Console.WriteLine("\nВысота дерева:  " + HeightTree(_head));
             return maxElement;
         }
         //--------------------------------------------
+
+
+        //Вывод на экран всевозможных путей, ведущих от корня к листьям бинарного дерева.       
+        
+        void ShowRoute(Array[] arrays, int n)
+        {
+            int i;
+            for (i = 0; i < n; i++)
+                Console.Write(" - " + arrays[i]);
+        }
+        void ObhodTree(BinaryTreeNode<T> node, Array[] arrays, int level)
+        {
+            if (node != null)
+            {
+                //arrays[level] = node.Value;  //?????????????????????????
+                if (node.Left == null && node.Right == null) ShowRoute(arrays, level + 1);
+                else
+                {
+                    ObhodTree(node.Left, arrays, level + 1);
+                    ObhodTree(node.Right, arrays, level + 1);
+                }
+            }
+        }
+
+        //------------------------
         internal int MaxCountIdentical()
         {
             int maxCount = 0;
@@ -484,6 +510,31 @@ namespace _01_BTree_TDD
                 //рекурсивный вызов для левой и правой веток
                 PrintTree(startNode.Left, indent, Side.Left);
                 PrintTree(startNode.Right, indent, Side.Right);
+            }
+        }
+
+        public T MinValue
+        {
+            get
+            {
+                if ( _head== null)
+                    throw new InvalidOperationException("Tree is empty");
+                var current = _head;
+                while (current.Left != null)
+                    current = current.Left;
+                return current.Value;
+            }
+        }
+        public T MaxValue
+        {
+            get
+            {
+                if (_head == null)
+                    throw new InvalidOperationException("Tree is empty");
+                var current = _head;
+                while (current.Right != null)
+                    current = current.Right;
+                return current.Value;
             }
         }
     }    

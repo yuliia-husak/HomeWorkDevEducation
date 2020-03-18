@@ -69,7 +69,7 @@ namespace _01_BTree_TDD
             };
 
             int actual = 1;
-            int s = instance.AmountNumber(instance.Max());
+            int s = instance.AmountNumber(instance.MaxValue);
             Assert.AreEqual(s, actual);
         }
 

@@ -14,7 +14,7 @@ namespace ArrayBasedStack
 
         //public int Count { get { return mas.Length; } }
 
-        int size = 0;
+        public int size { get; set; } = 0;
 
         public void Push(T value)
         {

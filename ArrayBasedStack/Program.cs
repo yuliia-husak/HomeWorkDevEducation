@@ -32,8 +32,8 @@ namespace ArrayBasedStack
             Console.WriteLine("myStack.ShowStack(): ");
             myStack.ShowStack();
 
-
-
+            Console.WriteLine(myStack.size);
+            
             myStack.Peek();
 
             Console.ReadKey();

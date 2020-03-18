@@ -14,6 +14,8 @@ namespace _01_BTree_TDD
 
         public BinaryTreeNode<TNode> Right { get; set; }
 
+
+
         public TNode Value
         {
             get;
@@ -48,6 +50,7 @@ namespace _01_BTree_TDD
                 return MaxChildHeight(Left);
             }
         }
+        
     }
        
     
