@@ -14,8 +14,12 @@ namespace ArrayBasedStack
 
         //public int Count { get { return mas.Length; } }
 
-        public int size { get; set; } = 0;
-
+        int size  = 0;
+        public int Size 
+        {
+            get { return size; }
+            set { size = Size; }
+        }
         public void Push(T value)
         {
             if (mas.Length == size)
