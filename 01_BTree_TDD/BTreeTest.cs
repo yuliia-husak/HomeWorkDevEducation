@@ -114,7 +114,7 @@ namespace _01_BTree_TDD
             Assert.AreEqual(s, actual);
         }
 
-        //На каждом уровне бинарного дерева найти максимальный элемент.
+        //На 3 уровне бинарного дерева найти колличество элементов.
         [Test]
         public void TestLevelMaxElement()
         {
@@ -123,10 +123,38 @@ namespace _01_BTree_TDD
                 21,10,28,6,15,25,32,3,9,12,18,23,26,30,34,7,17,24,29
             };
 
-            //уровень 3 максимальный элемент 34
-            int actual = 34;
-            int s = instance.LevelMaxElement();
+            //уровень 3 всего 8 элементов
+            int actual = 8;
+            int s = instance.SumElementLevel();
             Assert.AreEqual(s, actual);
+        }
+
+        //На каждом уровне бинарного дерева найти максимальный и миннимальный элемент.
+        [Test]
+        public void TestMinMaxElement()
+        {
+            BinaryTree<int> instance = new BinaryTree<int>
+            {
+                21,10,28,6,15,25,32,3,9,12,18,23,26,30,34,7,17,24,29
+            };
+            
+            int[] actual = { 21, 10, 6, 3, 7, 28, 32, 34, 29 };
+            int[] s = instance.FindMinMax();
+            CollectionAssert.AreEqual(s, actual);
+        }
+
+        //Найти минимальный и максимальный пути между листьями бинарного дерева.
+        [Test]
+        public void TestWayTree()
+        {
+            BinaryTree<int> instance = new BinaryTree<int>
+            {
+                21,10,28,6,15,25,32,3,9,12,18,23,26,30,34,7,17,24,29
+            };
+
+            int[] actual = { 21, 28, 32, 34, 29 };
+            int[] s = instance.WayTree();
+            CollectionAssert.AreEqual(s, actual);
         }
     }
 }

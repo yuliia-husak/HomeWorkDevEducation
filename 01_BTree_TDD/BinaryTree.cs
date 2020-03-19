@@ -10,7 +10,7 @@ namespace _01_BTree_TDD
     public class BinaryTree<T> : IEnumerable<T> where T : IComparable<T>
     {
         private BinaryTreeNode<T> _head;
-        private int _count;        
+        private int _count;
 
         #region Добавление нового узла дерева
 
@@ -68,13 +68,13 @@ namespace _01_BTree_TDD
                     AddTo(node.Right, value);
                 }
             }
-        }        
+        }
 
 
         //находим колличество заданного числа
         internal int AmountNumber(T value)
         {
-            int doublenumber=0;            
+            int doublenumber = 0;
 
             BinaryTreeNode<T> current = _head;
             BinaryTreeNode<T> parent;
@@ -96,19 +96,20 @@ namespace _01_BTree_TDD
 
                     parent = current;
                     current = current.Right;
-                }                
+                }
                 else
                 {
                     parent = current;
                     current = current.Right;
                     doublenumber++;
-                    // Искомый элемент найден             
-                    
+                    // Искомый элемент найден и ищем дальше            
+
                 }
-            }            
-            return doublenumber;     
+            }
+            return doublenumber;
         }
 
+        //проверка является ли дерево симметричным
         internal bool TreeSymetrical()
         {
             if (_head != null)
@@ -121,7 +122,7 @@ namespace _01_BTree_TDD
                 {
                     BinaryTreeNode<T> temp = queue.Dequeue();
 
-                    if ((temp.LeftHeight - temp.RightHeight)>1 || (temp.LeftHeight - temp.RightHeight) < -1)
+                    if ((temp.LeftHeight - temp.RightHeight) > 1 || (temp.LeftHeight - temp.RightHeight) < -1)
                     {
                         return false;
                     }
@@ -139,7 +140,7 @@ namespace _01_BTree_TDD
 
         //-------------------------------------------------
 
-            //высота произвольного дерева
+        //высота дерева
         int HeightTree(BinaryTreeNode<T> node)
         {
             if (node == null) return -1;
@@ -161,38 +162,110 @@ namespace _01_BTree_TDD
                 if (level == k) return 1;
             else
                 return CountElement(node.Left, level + 1, k) + CountElement(node.Right, level + 1, k);
-            
+
         }
-        public int LevelMaxElement()
+        public int SumElementLevel()
         {
             BinaryTreeNode<T> node = _head;
-            int maxElement = CountElement(node, 0, 1);
+            int maxElement = CountElement(node, 0, 3);
+            //вывод на экран для информации
             Console.WriteLine("\nВысота дерева:  " + HeightTree(_head));
             return maxElement;
         }
         //--------------------------------------------
 
-
-        //Вывод на экран всевозможных путей, ведущих от корня к листьям бинарного дерева.       
-        
-        void ShowRoute(Array[] arrays, int n)
-        {
-            int i;
-            for (i = 0; i < n; i++)
-                Console.Write(" - " + arrays[i]);
-        }
-        void ObhodTree(BinaryTreeNode<T> node, Array[] arrays, int level)
+        //определение максимального и минимального элемента на к-м уровне дерева
+        void InitMinMax(BinaryTreeNode<T> node, int level, int[] min, int[] max)
         {
             if (node != null)
             {
-                //arrays[level] = node.Value;  //?????????????????????????
-                if (node.Left == null && node.Right == null) ShowRoute(arrays, level + 1);
+                min[level] = max[level] = Convert.ToInt32(node.Value);
+                InitMinMax(node.Left, level + 1, min, max);
+                InitMinMax(node.Right, level + 1, min, max);
+            }
+        }
+
+        void MinMax(BinaryTreeNode<T> node, int level, ref int[] min, ref int[] max)
+        {
+            if (node != null)
+            {
+                if ((Convert.ToInt32(node.Value)) < min[level])
+                    min[level] = Convert.ToInt32(node.Value);
+                if ((Convert.ToInt32(node.Value)) > max[level])
+                    max[level] = Convert.ToInt32(node.Value);
+                MinMax(node.Left, level + 1, ref min, ref max);
+                MinMax(node.Right, level + 1, ref min, ref max);
+            }
+        }
+
+        public int[] FindMinMax()
+        {
+            BinaryTreeNode<T> node = _head;
+            int[] min; int[] max;
+            int h = HeightTree(_head);
+            min = new int[h + 1];
+            max = new int[h + 1];
+            InitMinMax(node, 0, min, max);
+            MinMax(node, 0, ref min, ref max);
+
+            Console.WriteLine($"\t \nHead: \t{_head.Value}");
+            for(int i = 1; i < h + 1; i++)
+            {
+                Console.WriteLine($"Level {i}: min = {min[i]}, max = {max[i]}");
+            }
+
+            int[] result = new int[h * 2 + 1];
+            for(int i = 0; i < min.Length; i++)
+            {
+                result[i] = min[i];
+            }
+            for (int i = h+1, j = 1; i < result.Length; i++, j++)
+            {
+                result[i] = max[j];
+            }
+
+            return result;
+        }
+        //-----------------------------------------------------------------------------
+
+        //Вывод на экран всевозможных путей, ведущих от корня к листьям бинарного дерева.       
+
+        void ShowRoute(int[] mas, int n)
+        {
+            int i;
+            if (n == HeightTree(_head) + 1) 
+                Console.Write("Длинный путь ");
+            else
+                Console.Write("Короткий путь ");
+            for (i = 0; i < n; i++)
+            {
+                Console.Write(" " + mas[i]);
+            }
+                
+            Console.WriteLine();
+        }
+        void ObhodTree(BinaryTreeNode<T> node, int[] mas, int level)
+        {
+            if (node != null)
+            {
+                mas[level] = Convert.ToInt32(node.Value);  
+                if (node.Left == null && node.Right == null) ShowRoute(mas, level + 1);
                 else
                 {
-                    ObhodTree(node.Left, arrays, level + 1);
-                    ObhodTree(node.Right, arrays, level + 1);
+                    ObhodTree(node.Left, mas, level + 1);
+                    ObhodTree(node.Right, mas, level + 1);
                 }
             }
+        }
+
+        public int[] WayTree()
+        {
+            BinaryTreeNode<T> node = _head;
+            int[] mas;
+            int h = HeightTree(_head);
+            mas = new int[h + 1];
+            ObhodTree(node, mas, 0);
+            return mas;
         }
 
         //------------------------
@@ -468,18 +541,6 @@ namespace _01_BTree_TDD
 
         #endregion
 
-
-        public IEnumerator<T> SumAllElement()
-        {
-            BinaryTreeNode<T> current = _head;
-
-            yield return current.Value;
-        }
-
-        public override string ToString()
-        {
-            return string.Format(_head.ToString());
-        }
 
         public enum Side
         {

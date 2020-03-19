@@ -52,7 +52,7 @@ namespace _01_BTree_TDD
             else Console.WriteLine("No identical");
 
             Console.WriteLine("\n---------------------------");
-            Console.Write("Максимальное число одиннаковых данные ");
+            Console.Write("Максимальное число одиннаковых данных ");
             int b = instance.MaxCountIdentical();
             Console.WriteLine(b);
 
@@ -61,9 +61,18 @@ namespace _01_BTree_TDD
             Console.WriteLine(instance.TreeSymetrical());
 
             Console.WriteLine("\n---------------------------");
-            Console.WriteLine(instance.LevelMaxElement());
+            Console.Write("Сумма всех элементов на 3 уровне: ");
+            Console.WriteLine(instance.SumElementLevel());
 
-            
+            Console.WriteLine("\n---------------------------");
+            Console.Write("Минимальное и максимальное значения на каждом уровне: ");
+            instance.FindMinMax();
+
+
+            Console.WriteLine("\n---------------------------");
+            Console.Write("Вывод путей на экран: \n");
+            instance.WayTree();
+
 
             Console.ReadLine();
         }
