@@ -37,18 +37,26 @@
 
         <Grid x:Name="gridSingIn" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="12" Background="White">
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="54"/>
+                <RowDefinition Height="36"/>
+                <RowDefinition Height="36"/>
             </Grid.RowDefinitions>
-            <Label Content="Sign in " HorizontalAlignment="Center" Margin="105,10,133,0" Grid.Row="0" VerticalAlignment="Top" Width="89" Height="32" FontSize="14" FontStyle="Normal"/>
-            <Label Content="Label" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            <Label Content="Sign in " HorizontalAlignment="Center" Margin="105,10,133,0" Grid.Row="0" VerticalAlignment="Top" Width="89" Height="32" FontSize="18" FontStyle="Normal"/>
+            <Label Content="Email" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="12"/>
+            <Label Content="Password" HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="3" VerticalAlignment="Top" FontSize="12"/>
+            <TextBox HorizontalAlignment="Left" Height="38" Margin="10,0,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Background="#f8f8fa" BorderBrush="White"/>
+            <TextBox HorizontalAlignment="Left" Height="38" Margin="10,0,0,0" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="307" Background="#f8f8fa" BorderBrush="White"/>
+            <Button Content="Sign in" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="5" VerticalAlignment="Top" Width="307" Height="38" Background="#258ff8"/>
+            <Button Content="Forgot password?" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="6" VerticalAlignment="Top" Width="307" Height="38" Background="White" Foreground="#5993cf" BorderBrush="White"/>
+            <Label Content="First in WizardzsChat?" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="7" VerticalAlignment="Top" Width="296"/>
+            <Button Content="Register a new account" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="8" VerticalAlignment="Top" Width="307" Height="38" Background="White" Foreground="#5993cf" BorderBrush="White"/>
+
 
         </Grid>
 
