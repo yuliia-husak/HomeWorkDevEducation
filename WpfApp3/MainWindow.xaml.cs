@@ -24,19 +24,5 @@ namespace UIMessSingIn
         {
             InitializeComponent();
         }
-
-        private void btnRegisterAccount_Click(object sender, RoutedEventArgs e)
-        {            
-            Window1 window11 = new Window1();
-            window11.Show();            
-            this.Close();
-        }
-
-        private void btnSignIn_Click(object sender, RoutedEventArgs e)
-        {
-            WindowPageChat windowChat = new WindowPageChat();
-            windowChat.Show();
-            this.Close();
-        }
     }
 }
