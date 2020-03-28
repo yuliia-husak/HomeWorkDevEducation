@@ -13,10 +13,10 @@ namespace ShopTest_WF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ShopTest : DbContext
+    public partial class ShopTestEntities : DbContext
     {
-        public ShopTest()
-            : base("name=ShopTest")
+        public ShopTestEntities()
+            : base("name=ShopTestEntities")
         {
         }
     
