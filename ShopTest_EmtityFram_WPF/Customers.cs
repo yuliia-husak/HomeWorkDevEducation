@@ -7,25 +7,30 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopTest_WF
+namespace ShopTest_EmtityFram_WPF
 {
     using System;
     using System.Collections.ObjectModel;
     
-    public partial class Orders
+    public partial class Customers
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Orders()
+        public Customers()
         {
-            this.OrderItems = new  ObservableCollection <OrderItems>();
+            this.Orders = new ObservableCollection<Orders>();
         }
     
-        public int order_num { get; set; }
-        public System.DateTime order_date { get; set; }
         public string cust_id { get; set; }
+        public string cust_name { get; set; }
+        public string cust_address { get; set; }
+        public string cust_city { get; set; }
+        public string cust_state { get; set; }
+        public string cust_zip { get; set; }
+        public string cust_country { get; set; }
+        public string cust_contact { get; set; }
+        public string cust_email { get; set; }
     
-        public virtual Customers Customers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection <OrderItems> OrderItems { get; set; }
+        public virtual ObservableCollection<Orders> Orders { get; set; }
     }
 }

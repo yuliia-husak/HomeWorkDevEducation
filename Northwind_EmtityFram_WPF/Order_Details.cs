@@ -7,20 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopTest_WF
+namespace Northwind_EmtityFram_WPF
 {
     using System;
     using System.Collections.ObjectModel;
     
-    public partial class OrderItems
+    public partial class Order_Details
     {
-        public int order_num { get; set; }
-        public int order_item { get; set; }
-        public string prod_id { get; set; }
-        public int quantity { get; set; }
-        public decimal item_price { get; set; }
+        public int OrderID { get; set; }
+        public int ProductID { get; set; }
+        public decimal UnitPrice { get; set; }
+        public short Quantity { get; set; }
+        public float Discount { get; set; }
     
         public virtual Orders Orders { get; set; }
-        public virtual Products Products { get; set; }
     }
 }

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopTest_WF
+namespace ShopTest_EmtityFram_WPF
 {
     using System;
     using System.Collections.ObjectModel;
@@ -17,7 +17,7 @@ namespace ShopTest_WF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Orders()
         {
-            this.OrderItems = new  ObservableCollection <OrderItems>();
+            this.OrderItems = new ObservableCollection<OrderItems>();
         }
     
         public int order_num { get; set; }
@@ -26,6 +26,6 @@ namespace ShopTest_WF
     
         public virtual Customers Customers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ObservableCollection <OrderItems> OrderItems { get; set; }
+        public virtual ObservableCollection<OrderItems> OrderItems { get; set; }
     }
 }

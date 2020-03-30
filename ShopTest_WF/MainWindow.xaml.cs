@@ -156,40 +156,7 @@ namespace ShopTest_WF
                     cust_id = add_order_cust_id.Text,
                     
                 };
-
-                //try
-                //{
-                //    // Exercise for the reader if you are using Northwind:  
-                //    // Add the Northwind Shippers table to the model.
-
-                //    // Acceptable ShipperID values are 1, 2, or 3.  
-                //    if (add_ShipViaTextBox.Text == "1" || add_ShipViaTextBox.Text == "2"
-                //        || add_ShipViaTextBox.Text == "3")
-                //    {
-                //        newOrder.ShipVia = Convert.ToInt32(add_ShipViaTextBox.Text);
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("Shipper ID must be 1, 2, or 3 in Northwind.");
-                //        return;
-                //    }
-                //}
-                //catch
-                //{
-                //    MessageBox.Show("Ship Via must be convertible to int");
-                //    return;
-                //}
-
-                //try
-                //{
-                //    newOrder.Freight = Convert.ToDecimal(add_freightTextBox.Text);
-                //}
-                //catch
-                //{
-                //    MessageBox.Show("Freight must be convertible to decimal.");
-                //    return;
-                //}
-
+                
                 // Add the order into the EF model  
                 context.Orders.Add(newOrder);
                 ordViewSource.View.Refresh();
@@ -311,6 +278,16 @@ namespace ShopTest_WF
             // After the data is loaded, call the DbSet<T>.Local property    
             // to use the DbSet<T> as a binding source.   
             custViewSource.Source = context.Customers.Local;
+        }        
+
+        private void btnVendors_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -5,10 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopTest_WF"
         mc:Ignorable="d"  
-        Title="ShopTest" Height="1080" Width="1920" FontSize="16">
+        Title="ShopTest" Height="1080" Width="1920" FontSize="16" Loaded="Window_Loaded_1">
 
     
     <Window.Resources>
+        <CollectionViewSource x:Key="customersViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Customers}, CreateList=True}"/>
+        <CollectionViewSource x:Key="customersOrdersViewSource" Source="{Binding Orders, Source={StaticResource customersViewSource}}"/>
         <Style x:Key="Label" TargetType="{x:Type Label}" BasedOn="{x:Null}">
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -104,9 +106,9 @@
             <Grid x:Name="grdWindowStart" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Visibility="Hidden">
             </Grid>
 
-            <Grid x:Name="grdWindowZak" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Visibility="Hidden" >
+            <Grid x:Name="grdWindowZak" Grid.Row="1" Grid.Column="2" Grid.RowSpan="3" Visibility="Visible" >
                 <Button Content="Закупки" HorizontalAlignment="Left" Margin="50,66,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.493,0.88" BorderBrush="White" Background="White" Foreground="Green" Focusable="False"/>
-                <Button Content="Поставщики" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="89,108,0,0" VerticalAlignment="Top" Width="218" BorderBrush="White" Background="White" Click="Button_Click_1"/>
+                <Button x:Name="btnVendors" Content="Поставщики" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="89,108,0,0" VerticalAlignment="Top" Width="218" BorderBrush="White" Background="White" Click="btnVendors_Click"/>
                 <Button Content="Приходные накладные" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="89,152,0,0" VerticalAlignment="Top" Width="218" BorderBrush="White" Background="White" Click="Button_Click"/>
                 <Button Content="Цены" HorizontalAlignment="Left" Margin="50,207,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.493,0.88" BorderBrush="White" Background="White" Foreground="Green" Focusable="False"/>
                 <Button Content="Прайс-листы" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="89,257,0,0" VerticalAlignment="Top" Width="218" BorderBrush="White" Background="White"/>
@@ -125,7 +127,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <StackPanel Orientation="Horizontal" Margin="2,2,2,0" Height="36" VerticalAlignment="Top" Background="Gainsboro" DataContext="{StaticResource customerViewSource}" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
+                    <StackPanel Orientation="Horizontal" Margin="2,2,2,0" Height="36" VerticalAlignment="Top" Background="Gainsboro" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin">
                         
                         <Button Name="btnFirst" Content="|◄" Command="{StaticResource FirstCommand}" Style="{StaticResource NavButton}"/>
                         <Button Name="btnPrev" Content="◄" Command="{StaticResource PreviousCommand}" Style="{StaticResource NavButton}"/>
@@ -137,7 +139,7 @@
                         <Button Name="btnUpdate" Content="Commit" Command="{StaticResource UpdateCommand}" FontSize="11" Width="80" Style="{StaticResource NavButton}"/>
                         <Button Content="Cancel" Name="btnCancel" Command="{StaticResource CancelCommand}" FontSize="11" Width="80" Style="{StaticResource NavButton}"/>
                     </StackPanel>
-                    <Grid x:Name="existingCustomerGrid" Grid.Row="1" HorizontalAlignment="Left" Margin="5" Visibility="Visible" VerticalAlignment="Top" Background="AntiqueWhite" DataContext="{StaticResource customerViewSource}">
+                    <Grid x:Name="existingCustomerGrid" DataContext="{StaticResource customersViewSource}" Grid.Row="1" HorizontalAlignment="Left" Margin="5" Visibility="Visible" VerticalAlignment="Top" Background="AntiqueWhite" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" MinWidth="233"/>
                             <ColumnDefinition Width="Auto" MinWidth="397"/>
@@ -154,7 +156,7 @@
                         <TextBox x:Name="customerIDTextBox" Grid.Row="0" Style="{StaticResource CustTextBox}"
                   Text="{Binding CustomerID, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         <Label Content="Email:" Grid.Row="1" Style="{StaticResource Label}"/>
-                        <TextBox x:Name="emailTextBox" Grid.Row="1" Style="{StaticResource CustTextBox}"
+                        <TextBox x:Name="emailTextBox" Grid.Row="1" 
                   Text="{Binding CompanyName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
                         <Label Content="Contact Name:" Grid.Row="2" Style="{StaticResource Label}"/>
                         <TextBox x:Name="contactNameTextBox" Grid.Row="2" Style="{StaticResource CustTextBox}"
@@ -238,7 +240,7 @@
                         <DatePicker x:Name="add_order_cust_id" Grid.Row="3" HorizontalAlignment="Right" Width="120"
                   SelectedDate="{Binding RequiredDate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true, UpdateSourceTrigger=PropertyChanged}"/>                        
                     </Grid>
-                    <DataGrid x:Name="ordersDataGrid" SelectionUnit="Cell" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="false" IsEnabled="True" EnableRowVirtualization="True" Width="auto" ItemsSource="{Binding Source={StaticResource customerOrdersViewSource}}" Margin="10,10,10,10" Grid.Row="2" RowDetailsVisibilityMode="VisibleWhenSelected">
+                    <DataGrid x:Name="ordersDataGrid" SelectionUnit="Cell" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="false" IsEnabled="True" EnableRowVirtualization="True" Width="auto" Margin="10,10,10,10" Grid.Row="2" RowDetailsVisibilityMode="VisibleWhenSelected">
                         <DataGrid.Columns>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
@@ -267,6 +269,9 @@
                     </DataGrid>
                 </Grid>
             </Grid>
+            
+            
+            
         </Grid>       
 
     </Grid>

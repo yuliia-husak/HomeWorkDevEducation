@@ -7,20 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopTest_WF
+namespace ShopTest_EmtityFram_WPF
 {
     using System;
     using System.Collections.ObjectModel;
     
-    public partial class OrderItems
+    public partial class sysdiagrams
     {
-        public int order_num { get; set; }
-        public int order_item { get; set; }
-        public string prod_id { get; set; }
-        public int quantity { get; set; }
-        public decimal item_price { get; set; }
-    
-        public virtual Orders Orders { get; set; }
-        public virtual Products Products { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

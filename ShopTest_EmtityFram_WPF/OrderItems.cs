@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ShopTest_WF
+namespace ShopTest_EmtityFram_WPF
 {
     using System;
     using System.Collections.ObjectModel;

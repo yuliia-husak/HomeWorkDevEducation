@@ -10,14 +10,14 @@
 namespace ShopTest_WF
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     
     public partial class Products
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Products()
         {
-            this.OrderItems = new HashSet<OrderItems>();
+            this.OrderItems = new  ObservableCollection <OrderItems>();
         }
     
         public string prod_id { get; set; }
@@ -27,7 +27,7 @@ namespace ShopTest_WF
         public string prod_desc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderItems> OrderItems { get; set; }
+        public virtual ObservableCollection <OrderItems> OrderItems { get; set; }
         public virtual Vendors Vendors { get; set; }
     }
 }
