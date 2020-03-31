@@ -68,7 +68,7 @@
                     <Button x:Name="btnSalary" Background="#a7f4f4" BorderBrush="#a7f4f4" HorizontalAlignment="Left" FontSize="17">Зарплата</Button>
                     <Button x:Name="btnCompany" Background="#a7f4f4" BorderBrush="#a7f4f4" HorizontalAlignment="Left" FontSize="17">Компания</Button>
                     <Button x:Name="btnSetting" Background="#a7f4f4" BorderBrush="#a7f4f4" HorizontalAlignment="Left" FontSize="17">Настройки</Button>
-                    <Button x:Name="btnStartPage" Background="#a7f4f4" BorderBrush="#a7f4f4" HorizontalAlignment="Left" FontSize="17">Начальная страница</Button>
+                    <Button x:Name="btnStartPage" Background="#a7f4f4" BorderBrush="#a7f4f4" HorizontalAlignment="Left" FontSize="17" Click="btnStartPage_Click">Начальная страница</Button>
                     <Button x:Name="btnReports" Background="#a7f4f4" BorderBrush="#a7f4f4" HorizontalAlignment="Left" FontSize="17" Click="btnReports_Click">Рекомендованные отчеты</Button>
                 </UniformGrid>
             </Grid>
@@ -108,14 +108,14 @@
                 <Image HorizontalAlignment="Left" Height="328" Margin="802,529,0,0" VerticalAlignment="Top" Width="598" Source="zvit4.png"/>
                 <Button Content="Отчеты" HorizontalAlignment="Left" Margin="802,43,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.493,0.88" BorderBrush="White" Background="White" Foreground="Green" Focusable="False"/>
                 <Button Content="Журнал учета" HorizontalAlignment="Left" Margin="802,483,0,0" VerticalAlignment="Top" Width="106" RenderTransformOrigin="0.493,0.88" BorderBrush="White" Background="White" Foreground="Green" Focusable="False" Height="26"/>
-                <Button Content="Контрагенты" HorizontalAlignment="Left" Margin="53,483,0,0" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.493,0.88" BorderBrush="White" Background="White" Foreground="Green" Focusable="False" Height="26"/>
+                <Button Content="Контрагенты" HorizontalAlignment="Left" Margin="53,483,0,0" VerticalAlignment="Top" Width="106" RenderTransformOrigin="0.493,0.88" BorderBrush="White" Background="White" Foreground="Green" Focusable="False" Height="26"/>
 
             </Grid>
 
             <Grid x:Name="grdWindowZak" Visibility="Hidden" Grid.ColumnSpan="2" >
                 <Button Content="Закупки" HorizontalAlignment="Left" Margin="50,66,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.493,0.88" BorderBrush="White" Background="White" Foreground="Green" Focusable="False"/>
                 <Button x:Name="btnVendors" Content="Поставщики" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="89,108,0,0" VerticalAlignment="Top" Width="218" BorderBrush="White" Background="White" Click="btnVendors_Click"/>
-                <Button Content="Приходные накладные" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="89,152,0,0" VerticalAlignment="Top" Width="218" BorderBrush="White" Background="White" Click="Button_Click"/>
+                <Button Content="Приходные накладные" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="89,152,0,0" VerticalAlignment="Top" Width="218" BorderBrush="White" Background="White"/>
                 <Button Content="Цены" HorizontalAlignment="Left" Margin="50,207,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.493,0.88" BorderBrush="White" Background="White" Foreground="Green" Focusable="False"/>
                 <Button Content="Прайс-листы" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="89,257,0,0" VerticalAlignment="Top" Width="218" BorderBrush="White" Background="White"/>
             </Grid>
@@ -195,9 +195,9 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal" Margin="2,2,2,0" Height="36" VerticalAlignment="Top" Background="Gainsboro" Grid.Row="0" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" >
-                        <Button x:Name="btnAddC" Content="New " Style="{StaticResource NavButton}" Width="150" Height="34" Margin="2,0" VerticalAlignment="Bottom" Click="btnAdd_Click" />
-                        <Button x:Name="btnChangec" Content="Change" Style="{StaticResource NavButton}" Width="150"  Click="btnChange_Click"/>
-                        <Button x:Name="btnDeletec" Content="Delete" Style="{StaticResource NavButton}"  Width="150" />
+                        <Button x:Name="btnAddC" Content="New " Style="{StaticResource NavButton}" Width="150" Height="34" Margin="2,0" VerticalAlignment="Bottom" Click="btnAddC_Click" />
+                        <Button x:Name="btnChangec" Content="Change" Style="{StaticResource NavButton}" Width="150"  Click="btnChangec_Click"/>
+                        <Button x:Name="btnDeletec" Content="Delete" Style="{StaticResource NavButton}"  Width="150" Click="btnDeletec_Click"/>
                         <Button x:Name="btnSearchc" Content="Search" Style="{StaticResource NavButton}"  Width="150" Click="btnSearchc_Click" />
                         <Button x:Name="btnShowAllc" Content="Show All" Style="{StaticResource NavButton}"  Width="150" Height="34" Margin="2,0" VerticalAlignment="Bottom" Click="btnShowAllc_Click" />
                     </StackPanel>
@@ -290,8 +290,6 @@
                     <RadioButton x:Name="rbCust" GroupName="selectProd" Content="Customers" HorizontalAlignment="Left" Margin="10,30,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="True"/>
                     <RadioButton x:Name="rbOrd" GroupName="selectProd" Content="Orders" HorizontalAlignment="Left" Margin="464,36,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="False"/>
                     <RadioButton x:Name="rbOrdIt" GroupName="selectProd" Content="OrderItems" HorizontalAlignment="Left" Margin="902,31,0,0" Grid.Row="1" VerticalAlignment="Top" IsChecked="False"/>
-
-
 
                 </Grid>
             </Grid>

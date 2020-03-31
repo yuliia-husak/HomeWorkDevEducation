@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Data;
+using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -23,13 +25,34 @@ namespace ShopTest_EmtityFram_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        public ShopTestEntities context = new ShopTestEntities();
+        public ShopTestEntities context;
         
         public MainWindow()
         {
             InitializeComponent();  
+            context = new ShopTestEntities();
+            //context.Vendors.Load();
+            //dgrVendors.ItemsSource = context.Vendors.Local.ToBindingList();
+
+            this.Closing += MainWindow_Closing;
         }
-       
+
+        private void MainWindow_Closing(object sender, CancelEventArgs e)
+        {
+            context.Dispose();
+        }
+
+        private void btnNavugution_Click(object sender, RoutedEventArgs e)
+        {
+            grdWindowStart.Visibility = Visibility.Visible;
+            grdWindowVendors.Visibility = Visibility.Hidden;
+            grdWindowZak.Visibility = Visibility.Hidden;
+            grdWindowVendors.Visibility = Visibility.Hidden;
+            dgrVendors.Visibility = Visibility.Hidden;
+            grdWindowCustomers.Visibility = Visibility.Hidden;
+            grdWindowZvit.Visibility = Visibility.Hidden;
+        }
+
         private void btnZak_GotFocus(object sender, RoutedEventArgs e)
         {
             btnZak.Background = Brushes.White;
@@ -42,21 +65,11 @@ namespace ShopTest_EmtityFram_WPF
             grdWindowZak.Visibility = Visibility.Visible;
 
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+       
         private void btnVendors_Click(object sender, RoutedEventArgs e)
         {
             grdWindowZak.Visibility = Visibility.Hidden;
             grdWindowVendors.Visibility = Visibility.Visible;
-        }
-
-        private void grdWindowVendors_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
-        {
-
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -87,6 +100,48 @@ namespace ShopTest_EmtityFram_WPF
            
         }
 
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (dgrVendors.SelectedItems.Count > 0)
+            {
+                for (int i = 0; i < dgrVendors.SelectedItems.Count; i++)
+                {
+                    Vendors vendor = dgrVendors.SelectedItems[i] as Vendors;
+                    if (vendor != null)
+                    {
+                        context.Vendors.Remove(vendor);
+                    }
+                }
+            }
+            context.SaveChanges();
+            dgrVendors.ItemsSource = context.Vendors.ToList();            
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            context.SaveChanges();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (txtVendorId.Text != "")
+            {
+                var query =
+                from product in context.Vendors
+                where product.vend_id == txtVendorId.Text
+                select new
+                {
+                    product.vend_id,
+                    product.vend_name,
+                    CategoryName = product.vend_address,
+                    product.vend_country
+                };
+
+                dgrVendors.ItemsSource = query.ToList();
+            }
+        }
+
         private void btnShowAll_Click(object sender, RoutedEventArgs e)
         {
             dgrVendors.Visibility = Visibility.Visible;
@@ -101,43 +156,9 @@ namespace ShopTest_EmtityFram_WPF
             grdWindowVendors.Visibility = Visibility.Hidden;
             grdWindowStart.Visibility = Visibility.Hidden;
             grdWindowCustomers.Visibility = Visibility.Visible;
-        }
-
-        private void btnFirst_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnNavugution_Click(object sender, RoutedEventArgs e)
-        {
-            grdWindowStart.Visibility = Visibility.Visible;
-            grdWindowVendors.Visibility = Visibility.Hidden;
-            grdWindowZak.Visibility = Visibility.Hidden;
-            grdWindowVendors.Visibility = Visibility.Hidden;
-            dgrVendors.Visibility = Visibility.Hidden;
-            grdWindowCustomers.Visibility = Visibility.Hidden;
-            grdWindowZvit.Visibility = Visibility.Hidden;
-        }
-
-        private void btnChange_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            System.Windows.Data.CollectionViewSource customersViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("customersViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // customersViewSource.Source = [generic data source]
-            System.Windows.Data.CollectionViewSource ordersViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("ordersViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // ordersViewSource.Source = [generic data source]
-            System.Windows.Data.CollectionViewSource orderItemsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("orderItemsViewSource")));
-            // Load data by setting the CollectionViewSource.Source property:
-            // orderItemsViewSource.Source = [generic data source]
-        }
-
+        }      
+        
+        
         private void btnShowAllc_Click(object sender, RoutedEventArgs e)
         {
            
@@ -232,7 +253,165 @@ namespace ShopTest_EmtityFram_WPF
                 }
             }
         }
+        private void btnAddC_Click(object sender, RoutedEventArgs e)
+        {
+            if (rbCust.IsChecked == true)
+            {
+                try
+                {
+                    Customers customer = new Customers();
+                    customer.cust_id = cust_idTextBox.Text;
+                    customer.cust_name = cust_nameTextBox.Text;
+                    customer.cust_city = cust_cityTextBox.Text;
+                    customer.cust_state = cust_stateTextBox.Text;
+                    customer.cust_zip = cust_zipTextBox.Text;
+                    customer.cust_country = cust_countryTextBox.Text;
+                    customer.cust_contact = cust_contactTextBox.Text;
+                    customer.cust_email = cust_emailTextBox.Text;
 
+                    context.Customers.Add(customer);
+                    context.SaveChanges();
+                    dgrProd.ItemsSource = context.Customers.ToList();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            if (rbOrd.IsChecked == true)
+            {
+                try
+                {
+                    Orders orders = new Orders();
+                    orders.order_num = int.Parse(order_numTextBox.Text);                    
+                    orders.order_date = DateTime.Parse(order_dateDatePicker.Text);
+                    orders.cust_id = cust_idTextBox1.Text;
+
+                    context.Orders.Add(orders);
+                    context.SaveChanges();
+
+                    dgrProd.ItemsSource = context.Orders.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            if (rbOrdIt.IsChecked == true)
+            {
+                try
+                {
+                    OrderItems orderItems = new OrderItems();
+                    orderItems.order_num = int.Parse(order_numTextBox1.Text);
+                    orderItems.order_item = int.Parse(order_itemTextBox.Text);
+                    orderItems.prod_id = prod_idTextBox.Text;
+                    orderItems.quantity = int.Parse(quantityTextBox.Text);
+                    orderItems.item_price = decimal.Parse(item_priceTextBox.Text);
+
+                    context.OrderItems.Add(orderItems);
+                    context.SaveChanges();
+
+                    dgrProd.ItemsSource = context.OrderItems.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+        private void btnChangec_Click(object sender, RoutedEventArgs e)
+        {
+            if (rbCust.IsChecked == true)
+            {
+                context.SaveChanges();
+            }
+
+            if (rbOrd.IsChecked == true)
+            {
+                context.SaveChanges();
+            }
+            if (rbOrdIt.IsChecked == true)
+            {
+                context.SaveChanges();
+            }
+        }
+
+        private void btnDeletec_Click(object sender, RoutedEventArgs e)
+        {
+            if (rbCust.IsChecked == true)
+            {
+                try
+                {
+                    if (dgrProd.SelectedItems.Count > 0)
+                    {
+                        for(int i = 0; i < dgrProd.SelectedItems.Count; i++)
+                        {
+                            Customers cust = dgrProd.SelectedItems[i] as Customers;
+                            if (cust != null)
+                            {
+                                context.Customers.Remove(cust);
+                                context.SaveChanges();
+                            }
+                        }
+                        dgrProd.ItemsSource = context.Customers.ToList();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            if (rbOrd.IsChecked == true)
+            {
+                try
+                {
+                    if (dgrProd.SelectedItems.Count > 0)
+                    {
+                        for(int i = 0; i < dgrProd.SelectedItems.Count; i++)
+                        {
+                            Orders ord = dgrProd.SelectedItems[i] as Orders;
+                            if (ord != null)
+                            {
+                                context.Orders.Remove(ord);
+                                context.SaveChanges();
+                            }
+                        }
+                        dgrProd.ItemsSource = context.Orders.ToList();
+                    } 
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            if (rbOrdIt.IsChecked == true)
+            {
+                try
+                {
+                    if (dgrProd.SelectedItems.Count > 0)
+                    {
+                        for(int i = 0; i < dgrProd.SelectedItems.Count; i++)
+                        {
+                            OrderItems items = dgrProd.SelectedItems[i] as OrderItems;
+                            if (items != null)
+                            {
+                                context.OrderItems.Remove(items);
+                                context.SaveChanges();
+
+                            }
+                        }
+                        dgrProd.ItemsSource = context.OrderItems.ToList();
+                    }                  
+                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
         private void btnReports_Click(object sender, RoutedEventArgs e)
         {
             grdWindowStart.Visibility = Visibility.Hidden;
@@ -244,29 +423,29 @@ namespace ShopTest_EmtityFram_WPF
             grdWindowZvit.Visibility = Visibility.Visible;
         }
 
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
+            System.Windows.Data.CollectionViewSource customersViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("customersViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // customersViewSource.Source = [generic data source]
+            System.Windows.Data.CollectionViewSource ordersViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("ordersViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // ordersViewSource.Source = [generic data source]
+            System.Windows.Data.CollectionViewSource orderItemsViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("orderItemsViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // orderItemsViewSource.Source = [generic data source]
         }
 
-        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        private void btnStartPage_Click(object sender, RoutedEventArgs e)
         {
-            
-            if (txtVendorId.Text != "")
-            {
-                var query =
-                from product in context.Vendors
-                where product.vend_id == txtVendorId.Text
-                select new
-                {
-                    product.vend_id,
-                    product.vend_name,
-                    CategoryName = product.vend_address,
-                    product.vend_country
-                };
-
-                dgrVendors.ItemsSource = query.ToList();
-            }
+            grdWindowStart.Visibility = Visibility.Visible;
+            grdWindowVendors.Visibility = Visibility.Hidden;
+            grdWindowZak.Visibility = Visibility.Hidden;
+            grdWindowVendors.Visibility = Visibility.Hidden;
+            dgrVendors.Visibility = Visibility.Hidden;
+            grdWindowCustomers.Visibility = Visibility.Hidden;
+            grdWindowZvit.Visibility = Visibility.Hidden;
         }
     }
 }

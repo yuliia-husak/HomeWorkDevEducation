@@ -50,7 +50,13 @@ namespace Northwind_EmtityFram_WPF
             // to use the DbSet<T> as a binding source.   
             custViewSource.Source = context.Customers.Local;
 
-            
+
+           
+            System.Windows.Data.CollectionViewSource ordersViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("customerOrdersViewSource")));
+            // Load data by setting the CollectionViewSource.Source property:
+            // ordersViewSource.Source = [generic data source]
+           
+
         }
     }
 }

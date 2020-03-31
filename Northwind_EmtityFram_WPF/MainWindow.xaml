@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
-        <CollectionViewSource x:Key="customersViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Customers}, CreateList=True}"/>
+        <CollectionViewSource x:Key="customersViewSource" d:DesignSource="{d:DesignInstance {x:Type local:Customers}, CreateList=True}"/>  
         <CollectionViewSource x:Key="customersOrdersViewSource" Source="{Binding Orders, Source={StaticResource customersViewSource}}"/>
     </Window.Resources>
     <Grid DataContext="{StaticResource customersOrdersViewSource}">
