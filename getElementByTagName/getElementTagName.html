@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>getElementByTagName</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            var paragrophs = this.document.getElementsByTagName("p");
+
+            for (var i = 0; i < paragrophs.length; i++) {
+                paragrophs[i].style.color = "green";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <p style="color:red">Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+    <p>Hello</p>
+</body>
+</html>

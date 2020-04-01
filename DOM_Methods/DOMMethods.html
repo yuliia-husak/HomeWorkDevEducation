@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DOM_Methods</title>
+    <script>
+        window.onload = function () {
+            var div1 = this.document.getElementById("div1");
+
+            var p1 = this.document.createElement("p");
+            p1.innerHTML = "Paragraph 1";
+            div1.appendChild(p1);
+
+            var p2 = this.document.createElement("p");
+            p2.innerHTML = "Paragraph 2";
+            this.document.body.insertBefore(p2, div1);
+        }
+    </script>
+</head>
+<body>
+    <div id="div1" style="border:solid 1px red; padding: 10px; margin:10px;">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DOM_Select</title>
+    <script type="text/javascript">
+        function selectFirstChild() {
+            var list = document.getElementById("list");
+            var child = list.firstChild;
+            if (child != null) {
+                child.setAttribute("style", "color:red;");
+               // child.style.color = "red";
+            }
+        }
+
+        function selectLastChild() {
+            var list = document.getElementById("list");
+            var child = list.lastChild;
+            if (child != null) {
+                child.setAttribute("style", "color:red;");
+                // child.style.color = "red";
+            }
+        }
+
+        var node = null;
+
+        function selectNextChild() {
+            resetColor();
+            if (node == null) {
+                var list = document.getElementById("list");
+                node = list.firstChild;
+                node.setAttribute("style", "color:green");
+                return;
+            } 
+            node = node.nextSibling;
+            if (node != null) {
+                node.setAttribute("style", "color:green");
+            }
+        }
+
+        function selectPrevChild() {
+            resetColor();
+            if (node == null) {
+                var list = document.getElementById("list");
+                node = list.lastChild;
+                node.setAttribute("style", "color:green");
+                return;
+            }
+            node = node.previousSibling;
+            if (node != null) {
+                node.setAttribute("style", "color:green");
+            }
+        }
+
+        function resetColor() {
+            var lilist = document.getElementsByTagName("li");
+            for (var i = 0; i < lilist.length; i++) {
+                lilist[i].setAttribute("style", "color:black");
+            }
+        }
+
+        function createNewChild() {
+            var list = document.getElementById("list");
+            var item = document.createElement("li");
+            item.innerHTML = "NEW ITEM";
+            list.appendChild(item);
+        }
+
+        function removeLastChild() {
+            var list = document.getElementById("list");
+            var item = list.lastChild;
+            if (item != null) {
+                list.removeChild(item);
+            }
+        }
+
+        function createNewChildatStart() {
+            var list = document.getElementById("list");
+            var item = document.createElement("li");
+            item.innerHTML = "NEW ITEM";
+            if (list.firstChild != 0) {
+                list.insertBefore(item, list.firstChild);   
+            }                     
+        }
+
+    </script>
+</head>
+<body>
+    <ul id="list"><li>Item 1</li><li>Item 2</li><li>Item 3</li><li>Item 4</li><li>Item 5</li></ul>
+    <br />
+    <input type="button" value="Select the first item" style="width:210px" onclick="selectFirstChild()" /><br/>
+    <input type="button" value="Select the last item" style="width:210px" onclick="selectLastChild()" /><br/>
+    <input type="button" value="Select the next item" style="width:210px" onclick="selectNextChild()" /><br/>
+    <input type="button" value="Select the prev item" style="width:210px" onclick="selectPrevChild()" /><br/>
+    <input type="button" value="Create the New item" style="width:210px" onclick="createNewChild()" /><br/>
+    <input type="button" value="Remove the last item" style="width:210px" onclick="removeLastChild()" /><br/>
+    <input type="button" value="Create the New item at Start" style="width:210px" onclick="createNewChildatStart()" /><br/>
+</body>
+</html>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>getElementByIdName</title>
+    <script type="text/javascript">
+        window.onload = function () {
+            document.getElementById("answerButton").onclick = function () {
+                var radioButton = document.getElementsByName("answer");
+
+                var res = "";
+                for (var i = 0; i < radioButton.length; i++) {
+                    res += radioButton[i].value + " " + radioButton[i].checked + "\r\n";
+                }
+                alert(res);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    Yes<input type="radio" name="answer" value="Yes" />
+    No<input type="radio" name="answer" value="No" />
+    Not know<input type="radio" name="answer" value="Not know" />
+
+    <input id="answerButton" type="button" value="Get on answer"/>
+</body>
+</html>

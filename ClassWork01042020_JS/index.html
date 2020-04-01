@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ClassWork</title>
+
+    <script src="Modele1.js"></script>
+    <script src="Module2.js"></script>
+    <script src="Modul3.js"></script>
+
+    <script type="text/javascript">
+        
+        //function ss(st, step) {
+        //    this.start = st;
+        //    this.stept = step;           
+        //    start = start + stept;
+        //    var ap = document.write(start + " " + stept + "<br />");
+        //    return start;           
+        //}
+
+        //function ss2(fun, count) {
+        //    this.f = fun;
+        //    this.c = count;
+        //    var arr = new Array();
+           
+        //    for (var i = 0; i < c; i++) {
+        //        arr[i] = ss(f, 2);
+        //    };
+        //    document.write("____________" + "<br />");
+        //    document.write(arr);
+        //    document.write("____________" + "<br />");
+        //    document.write();
+        //    var res = arr.join(" | ");
+        //    document.write("<p>" + res);
+        //}
+
+        //var gen = ss2(5, 3);
+        alert("Hello!");
+
+        function buttonClickHandler() {
+            alert("Button pressed.");
+        }
+        
+        Modul1.StartModul1();
+        Modul2.StartModul2();
+
+
+
+    </script>
+</head>
+<body>
+    <input type="button" value="Button" onclick="buttonClickHandler()"/>
+    <br />
+
+    <input type="button" value="Button2" onclick="alert('Hello in body')"/>   
+
+</body>
+</html>

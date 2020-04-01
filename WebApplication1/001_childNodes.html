@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>childNodes</title>
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var e = document.getElementById("list");
+            for (var i = 0; i < e.childNodes.length; ++i) {
+                e.childNodes[i].style.color = "red";
+                alert(e.childNodes[i].nodeType);
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="list"><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>
+</body>
+</html>

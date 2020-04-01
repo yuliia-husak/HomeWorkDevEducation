@@ -63,6 +63,7 @@ namespace ShopTest_EmtityFram_WPF
             grdWindowStart.Visibility = Visibility.Hidden;
             grdWindowCustomers.Visibility = Visibility.Hidden;
             grdWindowZak.Visibility = Visibility.Visible;
+            grdWindowZvit.Visibility = Visibility.Hidden;
 
         }
        
