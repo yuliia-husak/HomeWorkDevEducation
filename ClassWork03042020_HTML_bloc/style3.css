@@ -1,0 +1,31 @@
+﻿body {
+    background-color: lightgoldenrodyellow;
+   
+}
+
+#header {
+    background-color: lightgreen;
+    height: 50px;
+}
+
+#context {
+    background-color: lightgray;
+    width: 450px;
+    height: 300px;
+    float: left;
+    margin: 15px;
+}
+
+#column {
+    background-color: lightcoral;
+    height:300px;
+    margin: 15px;
+    margin-left:15px;
+   
+}
+
+#bottom {
+    background-color: lightgreen;    
+    height: 50px;
+    clear:both;
+}

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ajax Timeout</title>
+    <script>
+        window.onload = function () {
+            this.document.getElementById("buttonGet").onclick = function () {
+                var xhr = new XMLHttpRequest();
+                var timeout = 20000;
+                var timer = setTimeout(function () { xhr.abort(); alert("aborted"); }, timeout);
+
+                xhr.open("GET", "TestHandler.ashx");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        clearTimeout(timer);
+                        document.getElementById("output").innerHTML = xhr.responseText;
+                    }
+                }
+                xhr.send();
+            }
+        }
+    </script>
+</head>
+<body>
+    <input id="buttonGet" type="button" value="Get Data"/>
+    <p id="output"></p>
+</body>
+</html>

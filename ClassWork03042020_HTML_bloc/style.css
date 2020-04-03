@@ -1,0 +1,49 @@
+﻿body {
+}
+
+div{
+    border: 1px solid blue;
+}
+
+#header1, #header2, #header3{
+    width:150px;
+    height:50px;
+    float:left;
+    margin:30px;
+}
+
+#header1{
+    background-color:brown;
+}
+
+#header2 {
+    background-color: green;
+}
+
+#header3 {
+    background-color: darkblue;
+}
+
+#col1 {
+    width: 150px;
+    height: 250px;
+    float:left;
+    margin:30px;
+    background-color:pink;
+}
+
+ #col2, #col3 {
+    width: 150px;
+    height: 250px;
+    margin:30px;
+    float:left;   
+ }
+
+ #col2{
+     background-color: aqua;
+ }
+
+
+#col3 {
+    background-color: blue;
+}

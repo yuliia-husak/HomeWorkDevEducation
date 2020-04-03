@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+        window.onload = function () {
+            this.document.getElementById("btnGet").onclick = function () {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "testfile.html", true);//false - синхронный запрос
+
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) {
+                        if (xhr.status == 200) {
+                            document.getElementById("output").innerHTML += xhr.responseText;
+                        }
+                    }
+                }
+                xhr.send();
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    55555
+    <input id="btnGet" type="button" value="Get info" />
+    <p id="output"></p>
+</body>
+</html>
