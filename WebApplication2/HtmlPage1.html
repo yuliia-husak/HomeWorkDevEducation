@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        table{
+    border-collapse:collapse;
+    }
+
+    td{
+        border: 1px solid black;
+    }
+    </style>
+    <script>
+        window.onload = function () {
+            var newTable = document.createElement("table");
+            for (var y = 0; y <= 5; y++) {
+                var newRow = newTable.insertRow(y);
+                for (var x = 0; x <= 5; x++) {
+                    var newCell = newRow.insertCell(x);
+                    newCell.width = 50;
+                }
+            }
+            document.body.appendChild(newTable);
+        }
+
+        window.onload = function () {
+               var doc = document,
+              elem = doc.createElement("div");
+               //content = document.createTextNode("Hello"),
+                   p3P = doc.getElementById("p3");
+               elem.innerHTML = '<strong> Hello';
+
+               elem.setAttribute('id', 'divTest');
+               //elem.id = 'divTest';
+               //elem.appendChild(content);
+
+               //p3P.parentNode.appendChild(elem);
+            p3P.parentNode.insertBefore(elem, p3);
+
+            p2P = doc.getElementById("p2");
+
+            p3P.parentNode.removeChild(p2P);
+
+            
+
+               
+                console.log(elem);
+            } ;
+
+    </script>
+</head>
+<body>
+    <form method="post" action="">
+        <table id="dynamic" width="650" border="1" cellspacing="0" cellpadding="5">
+            <tr>
+                <th scope="col">Поле 1</th>
+                <th scope="col">Поле 2</th>
+                <th scope="col">Поле 3</th>
+                <th scope="col">Поле 4</th>
+                <th scope="col">&nbsp;</th>
+            </tr>
+            <tr>
+                <td>Значение 1</td>
+                <td>Значение 2</td>
+                <td>Значение 3</td>
+                <td>Значение 4</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Значение 1</td>
+                <td>Значение 2</td>
+                <td>Значение 3</td>
+                <td>Значение 4</td>
+                <td>&nbsp;</td>
+            </tr>
+        </table>
+        <input name="sub" type="submit" value="SEND">
+        <input name="add" type="button" value="Add" onclick="btn_Add"/>
+        <input name="del" type="button" value="Delete" onclick="btn_delete" />
+    </form>
+    <div>
+        <p id="p1">P 1</p>
+        <p id="p2">P 2</p>
+        <p id="p3">Input div</p>
+    </div>
+
+    <div id="db">
+
+    </div>
+    
+</body>
+</html>
