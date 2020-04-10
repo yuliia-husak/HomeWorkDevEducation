@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html ng-app="angProdApp">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="angular-1.7.9/angular.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="angular-1.7.9/angular.min.js"></script>
+    <script>
+        var model = {
+            items: [
+                { purchase: "Bread", done: false, price: 15.9 },
+                { purchase: "Batle", done: false, price: 60 },
+                { purchase: "Potato", done: true, price: 22.6 },
+                { purchase: "Cheese", done: false, price: 310 },
+            ]
+        };
+
+        var purchaseApp = angular.module("purchaseApp", []);
+
+        purchaseApp.controller("purchaseAppCtrl", function ($scope) {
+            $scope.list = model;
+            $scope.addItem = function (text, price) {
+                price = parseFloat(price);
+                if (text != "" && !isNaN(price)) {
+                    $scope.list.items.push({ purchase: text, price: price, done: false });
+                }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="purchaseAppCtrl">
+    <div class="page-header">
+        <h1>List prods</h1>
+    </div>
+    <div class="panel">
+        <div class="form-inline">
+            <div class="form-group">
+                <div class="col-md-8">
+                    <input class="form-control" ng-model="text" placeholder="Name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input type="number" class="form-control" ng-model="price" placeholder="Price" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-8">
+                    <button class="btn btn-default" ng-click="addItem(text, price)">Add</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Pay</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in list.items">
+                    <td>{{item.purchase}}</td>
+                    <td>{{item.price}}</td>
+                    <td><input type="checkbox" ng-model="item.done" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
