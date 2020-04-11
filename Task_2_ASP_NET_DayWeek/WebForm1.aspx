@@ -20,8 +20,7 @@
 
          <asp:CheckBoxList ID="ActorList" runat="server" 
                                           AutoPostBack="True" RepeatLayout="Flow"
-                                          Width="194px"                                           
-                                          
+                                          Width="194px" 
                                            RepeatDirection="Vertical"          
                                            TextAlign="Right">
                             <asp:ListItem Value="Monday" />

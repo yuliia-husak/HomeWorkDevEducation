@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Task_3_ASP_NET_ListBoxDeleteEditing
+namespace Task_4_ASP_NET_List
 {
 
 
@@ -24,15 +24,6 @@ namespace Task_3_ASP_NET_ListBoxDeleteEditing
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle;
-
-        /// <summary>
         /// ListBox1 control.
         /// </summary>
         /// <remarks>
@@ -42,57 +33,48 @@ namespace Task_3_ASP_NET_ListBoxDeleteEditing
         protected global::System.Web.UI.WebControls.ListBox ListBox1;
 
         /// <summary>
-        /// btnAdd control.
+        /// Button1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// txtAdd control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAdd;
+        protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
-        /// btnEdit control.
+        /// ListBox2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEdit;
+        protected global::System.Web.UI.WebControls.ListBox ListBox2;
 
         /// <summary>
-        /// txtEdit control.
+        /// btnAllBasket control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEdit;
+        protected global::System.Web.UI.WebControls.Button btnAllBasket;
 
         /// <summary>
-        /// btnDel control.
+        /// btnDelAllBasket control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDel;
-
-        /// <summary>
-        /// txtDel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDel;
+        protected global::System.Web.UI.WebControls.Button btnDelAllBasket;
     }
 }
