@@ -12,14 +12,18 @@ while (isSunk == false) {
         alert("Please enter a valid cell number!");
     } else {
         quesses = quesses + 1;
+
         if (quess == location1 || quess == location2 || quess == location3) {
+            alert("HIT!");
             hits = hits + 1;
             if (hits == 3) {
                 isSunk = true;
                 alert("You sank my battleship!");
             }
-
-        } 
+        }
+        else {
+            alert("MISS");
+        }
     }    
 }
 
