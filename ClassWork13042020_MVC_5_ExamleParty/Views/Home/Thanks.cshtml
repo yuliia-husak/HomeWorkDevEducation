@@ -1,0 +1,27 @@
+﻿@model ClassWork13042020_MVC_5_ExamleParty.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <div>
+        <h1>Thanks, @Model.Name!</h1>
+        @if (Model.WillAttend == true)
+        {
+            @:Great that you come, drinds are already in the refrigerator ;)
+        }
+        else
+        {
+            @:sorry you won’t come, but thanks for letting me know.
+        }
+    </div>
+</body>
+</html>

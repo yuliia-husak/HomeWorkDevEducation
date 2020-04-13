@@ -1,0 +1,31 @@
+﻿@model ClassWork13042020_MVC_5_ExamleParty.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <p>Your name: @Html.TextBoxFor(x => x.Name)</p>
+        <p>Your email: @Html.TextBoxFor(x => x.Email)</p>
+        <p>Your phone: @Html.TextBoxFor(x => x.Phone)</p>
+        <p>Will you come?
+            @Html.DropDownListFor(x=>x.WillAttend, new[]
+       {
+           new SelectListItem(){Text = "Yes of course I will", Value=Boolean.TrueString },
+           new SelectListItem() {Text ="No, I can not", Value=Boolean.TrueString } 
+       })
+        </p>
+        <input type="submit" value="Sent form RSVP"/>
+
+    }
+</body>
+</html>

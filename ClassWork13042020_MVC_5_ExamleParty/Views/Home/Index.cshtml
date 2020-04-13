@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @ViewBag.Greeting (with view)
+        <p>We're going to an exciting party</p>
+        @Html.ActionLink("Form RSVP", "RsvpForm")
+    </div>
+</body>
+</html>
