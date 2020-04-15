@@ -26,7 +26,11 @@ namespace ClassWork13042020_MVC_5_ExamleParty.Controllers
         [HttpPost]
         public ViewResult RsvpForm(GuestResponse guest) 
         {
-            return View("Thanks", guest);
+            if (ModelState.IsValid)
+                return View("Thanks", guest);
+
+            else
+                return View();
         }
     }
 }
