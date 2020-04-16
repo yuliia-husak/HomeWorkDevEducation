@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CarStore.Domain.Abstract;
 using CarStore.Domain.Entities;
+using CarStore.WebUI.Models;
 
 namespace CarStore.WebUI.Controllers
 {
@@ -19,10 +20,20 @@ namespace CarStore.WebUI.Controllers
 
         public ViewResult List(int page=1)
         {
-            return View(repository.Cars
-                .OrderBy(car => car.CarId)
-                .Skip((page - 1) * pageSize)
-                .Take(pageSize));
+            CarsListViewModel model = new CarsListViewModel
+            {
+                Cars = repository.Cars
+                     .OrderBy(car => car.CarId)
+                     .Skip((page - 1) * pageSize)
+                     .Take(pageSize),
+                PagingInfo = new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = pageSize,
+                    TotalItems = repository.Cars.Count()
+                }
+            };
+            return View(model);
         }
     }
 }
