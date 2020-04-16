@@ -8,15 +8,10 @@
 
 @foreach (var p in @Model.Cars)
 {
-    <div class="well">
-        <h3>
-            <strong>@p.Name</strong>
-            <span class="pull-right label label-primary">@p.Price.ToString("# dol")</span>
-        </h3>
-        <span class="lead">@p.Description</span>
-    </div>
+   @Html.Partial("CarSummary", p)
 }
 
-<div class="btn-group pull-right">
-    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
-</div>
+    <div class="btn-group pull-right">
+        @Html.PageLinks(Model.PagingInfo, x => Url.Action("List",
+            new { page = x, category = Model.CurrentCategory }))
+    </div>
