@@ -6,6 +6,7 @@ using Moq;
 using Ninject;
 using CarStore.Domain.Abstract;
 using CarStore.Domain.Entities;
+using CarStore.Domain.Concrete;
 
 namespace GameStore.WebUI.Infrastructure
 {
@@ -32,14 +33,7 @@ namespace GameStore.WebUI.Infrastructure
         private void AddBindings()
         {
             // Здесь размещаются привязки
-            Mock<ICarRepository> mock = new Mock<ICarRepository>();
-            mock.Setup(m => m.Cars).Returns(new List<Car>
-            {
-                new Car { Name = "SimCity", Price = 1499 },
-                new Car { Name = "TITANFALL", Price=2299 },
-                new Car { Name = "Battlefield 4", Price=899.4M }
-            });
-            kernel.Bind<ICarRepository>().ToConstant(mock.Object);
+            kernel.Bind<ICarRepository>().To<EFCarRepository>();
         }
     }
 }
