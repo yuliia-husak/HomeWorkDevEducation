@@ -3,9 +3,14 @@
 @{
     ViewBag.Title = "GameStore: ваша корзина";
 }
+    <style>
+        #cartTable td {
+            vertical-align: middle;
+        }
+    </style>
 
 <h2>Ваша корзина</h2>
-<table class="table">
+<table  id="cartTable" class="table">
     <thead>
         <tr>
             <th>Кол-во</th>
@@ -14,6 +19,7 @@
             <th class="text-right">Общая цена</th>
         </tr>
     </thead>
+
     <tbody>
         @foreach (var line in Model.Cart.Lines)
         {
@@ -24,9 +30,18 @@
                 <td class="text-right">
                     @((line.Quantity * line.Car.Price).ToString("# руб"))
                 </td>
+                <td>
+                    @using (Html.BeginForm("RemoveFromCart", "Cart"))
+                    {
+                        @Html.Hidden("CarId", line.Car.CarId)
+                        @Html.HiddenFor(x => x.ReturnUrl)
+                        <input class="btn btn-sm btn-warning" type="submit" value="Удалить" />
+                    }
+                </td>
             </tr>
         }
     </tbody>
+
     <tfoot>
         <tr>
             <td colspan="3" class="text-right">Итого:</td>

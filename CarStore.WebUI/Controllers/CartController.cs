@@ -8,54 +8,45 @@ namespace GameStore.WebUI.Controllers
 {
     public class CartController : Controller
     {
-        public ViewResult Index(string returnUrl)
-        {
-            return View(new CartIndexViewModel
-            {
-                Cart = GetCart(),
-                ReturnUrl = returnUrl
-            });
-        }
-
+        
         private ICarRepository repository;
         public CartController(ICarRepository repo)
         {
             repository = repo;
         }
 
-        public RedirectToRouteResult AddToCart(int carId, string returnUrl)
+        public ViewResult Index(Cart cart, string returnUrl)
+        {
+            return View(new CartIndexViewModel
+            {
+                Cart = cart,
+                ReturnUrl = returnUrl
+            });
+        }
+        
+        public RedirectToRouteResult AddToCart(Cart cart, int carId, string returnUrl)
         {
             Car car = repository.Cars
                 .FirstOrDefault(g => g.CarId == carId);
 
             if (car != null)
             {
-                GetCart().AddItem(car, 1);
+                cart.AddItem(car, 1);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
 
-        public RedirectToRouteResult RemoveFromCart(int carId, string returnUrl)
+        public RedirectToRouteResult RemoveFromCart(Cart cart, int carId, string returnUrl)
         {
             Car car = repository.Cars
                 .FirstOrDefault(g => g.CarId == carId);
 
             if (car != null)
             {
-                GetCart().RemoveLine(car);
+                cart.RemoveLine(car);
             }
             return RedirectToAction("Index", new { returnUrl });
         }
-
-        public Cart GetCart()
-        {
-            Cart cart = (Cart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new Cart();
-                Session["Cart"] = cart;
-            }
-            return cart;
-        }
+        
     }
 }
