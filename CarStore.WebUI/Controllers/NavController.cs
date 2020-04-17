@@ -14,13 +14,16 @@ namespace CarStore.WebUI.Controllers
             repository = repo;
         }
 
-        public PartialViewResult Menu()
+        public PartialViewResult Menu(string category = null)
         {
+            ViewBag.SelectedCategory = category;
+
             IEnumerable<string> categories = repository.Cars
                 .Select(car => car.Category)
                 .Distinct()
                 .OrderBy(x => x);
-            return PartialView(categories);
+            
+            return PartialView("FlexMenu", categories);
         }
     }
 }
