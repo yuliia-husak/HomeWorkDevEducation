@@ -8,6 +8,15 @@ namespace GameStore.WebUI.Controllers
 {
     public class CartController : Controller
     {
+        public ViewResult Index(string returnUrl)
+        {
+            return View(new CartIndexViewModel
+            {
+                Cart = GetCart(),
+                ReturnUrl = returnUrl
+            });
+        }
+
         private ICarRepository repository;
         public CartController(ICarRepository repo)
         {
