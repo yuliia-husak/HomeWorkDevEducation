@@ -34,6 +34,15 @@ namespace GameStore.WebUI.Infrastructure
         {
             // Здесь размещаются привязки
             kernel.Bind<ICarRepository>().To<EFCarRepository>();
+
+            EmailSettings emailSettings = new EmailSettings
+            {
+                WriteAsFile = bool.Parse(ConfigurationManager
+                    .AppSettings["Email.WriteAsFile"] ?? "false")
+            };
+
+            kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
+                .WithConstructorArgument("settings", emailSettings);
         }
     }
 }

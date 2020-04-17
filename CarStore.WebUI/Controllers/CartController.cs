@@ -10,9 +10,16 @@ namespace GameStore.WebUI.Controllers
     {
         
         private ICarRepository repository;
-        public CartController(ICarRepository repo)
+        private IOrderProcessor orderProcessor;
+        public CartController(ICarRepository repo, IOrderProcessor processor)
         {
             repository = repo;
+            orderProcessor = processor;
+        }
+
+        public ViewResult Checkout()
+        {
+            return View(new ShippingDetails());
         }
 
         public ViewResult Index(Cart cart, string returnUrl)
@@ -47,6 +54,31 @@ namespace GameStore.WebUI.Controllers
             }
             return RedirectToAction("Index", new { returnUrl });
         }
-        
+
+        public PartialViewResult Summary(Cart cart)
+        {
+            return PartialView(cart);
+        }
+
+        [HttpPost]
+        public ViewResult Checkout(Cart cart, ShippingDetails shippingDetails)
+        {
+            if (cart.Lines.Count() == 0)
+            {
+                ModelState.AddModelError("", "Извините, ваша корзина пуста!");
+            }
+
+            if (ModelState.IsValid)
+            {
+                orderProcessor.ProcessOrder(cart, shippingDetails);
+                cart.Clear();
+                return View("Completed");
+            }
+            else
+            {
+                return View(shippingDetails);
+            }
+        }
+
     }
 }
