@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CarStore.Domain.Abstract;
+using CarStore.Domain.Entities;
 
 namespace CarStore.WebUI.Controllers
 {
@@ -20,6 +21,13 @@ namespace CarStore.WebUI.Controllers
         public ViewResult Index()
         {
             return View(repository.Cars);
+        }
+
+        public ViewResult Edit(int carId)
+        {
+            Car car = repository.Cars
+                .FirstOrDefault(g => g.CarId == carId);
+            return View(car);
         }
     }
 }
