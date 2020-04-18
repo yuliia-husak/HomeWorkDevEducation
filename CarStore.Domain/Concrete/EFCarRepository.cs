@@ -16,5 +16,23 @@ namespace CarStore.Domain.Concrete
         {
             get { return context.Cars; }
         }
+
+        public void SaveCar(Car car)
+        {
+            if (car.CarId == 0)
+                context.Cars.Add(car);
+            else
+            {
+               Car dbEntry = context.Cars.Find(car.CarId);
+                if (dbEntry != null)
+                {
+                    dbEntry.Name = car.Name;
+                    dbEntry.Description = car.Description;
+                    dbEntry.Price = car.Price;
+                    dbEntry.Category = car.Category;
+                }
+            }
+            context.SaveChanges();
+        }
     }
 }

@@ -29,5 +29,21 @@ namespace CarStore.WebUI.Controllers
                 .FirstOrDefault(g => g.CarId == carId);
             return View(car);
         }
+
+        [HttpPost]
+        public ActionResult Edit(Car car)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.SaveCar(car);
+                TempData["message"] = string.Format("Изменения в игре \"{0}\" были сохранены", car.Name);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                // Что-то не так со значениями данных
+                return View(car);
+            }
+        }
     }
 }

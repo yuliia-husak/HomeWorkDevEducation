@@ -10,5 +10,6 @@ namespace CarStore.Domain.Abstract
     public interface ICarRepository
     {
         IEnumerable<Car>  Cars {get;}
+        void SaveCar(Car car);
     }
 }
