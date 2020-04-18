@@ -34,5 +34,16 @@ namespace CarStore.Domain.Concrete
             }
             context.SaveChanges();
         }
+
+        public Car DeleteCar(int carId)
+        {
+            Car dbEntry = context.Cars.Find(carId);
+            if (dbEntry != null)
+            {
+                context.Cars.Remove(dbEntry);
+                context.SaveChanges();
+            }
+            return dbEntry;
+        }
     }
 }

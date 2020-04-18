@@ -1,16 +1,29 @@
 ﻿@model CarStore.Domain.Entities.Car
 
 @{
-    ViewBag.Title = "Админ панель: редактирование товара";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
-}
+        ViewBag.Title = "Админ панель: редактирование товара";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+        //отключают проверку достоверности на стороне клиента 
+        //только для этого представления
+        //HtmlHelper.ClientValidationEnabled = false;
+        //HtmlHelper.UnobtrusiveJavaScriptEnabled = false;
+        /*Чтобы отключить проверку достоверности на стороне клиента 
+         для всего приложения, необходимо установить ряд значений 
+         в файле Web.config:
+        <appSettings>
+        ...
+        <add key="ClientValidationEnabled" value="false" />
+        <add key="UnobtrusiveJavaScriptEnabled" value="false" />
+        </appSettings>*/
+    }
 
     <div class="panel">
         <div class="panel-heading">
             <h3>Редактирование машины «@Model.Name»</h3>
         </div>
 
-        @using (Html.BeginForm())
+        @using (Html.BeginForm("Edit","Admin"))
         {
             <div class="panel-body">
                 @Html.HiddenFor(m => m.CarId)

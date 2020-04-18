@@ -11,5 +11,6 @@ namespace CarStore.Domain.Abstract
     {
         IEnumerable<Car>  Cars {get;}
         void SaveCar(Car car);
+        Car DeleteCar(int carId);
     }
 }

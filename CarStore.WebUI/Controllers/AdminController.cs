@@ -45,5 +45,22 @@ namespace CarStore.WebUI.Controllers
                 return View(car);
             }
         }
+
+        public ViewResult Create()
+        {
+            return View("Edit", new Car());
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int carId)
+        {
+            Car deletedCar = repository.DeleteCar(carId);
+            if (deletedCar != null)
+            {
+                TempData["message"] = string.Format("Игра \"{0}\" была удалена",
+                    deletedCar.Name);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
