@@ -8,6 +8,7 @@ using CarStore.Domain.Entities;
 
 namespace CarStore.WebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         // GET: Admin

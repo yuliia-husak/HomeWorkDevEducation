@@ -7,6 +7,8 @@ using Ninject;
 using CarStore.Domain.Abstract;
 using CarStore.Domain.Entities;
 using CarStore.Domain.Concrete;
+using CarStore.WebUI.Infrastructure.Abstract;
+using CarStore.WebUI.Infrastructure.Concrete;
 
 namespace CarStore.WebUI.Infrastructure
 {
@@ -43,6 +45,8 @@ namespace CarStore.WebUI.Infrastructure
 
             kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>()
                 .WithConstructorArgument("settings", emailSettings);
+
+            kernel.Bind<IAuthProvider>().To<FormAuthProvider>();
         }
     }
 }
