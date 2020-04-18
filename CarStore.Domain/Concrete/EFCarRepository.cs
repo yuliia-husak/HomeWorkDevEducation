@@ -30,6 +30,8 @@ namespace CarStore.Domain.Concrete
                     dbEntry.Description = car.Description;
                     dbEntry.Price = car.Price;
                     dbEntry.Category = car.Category;
+                    dbEntry.ImageData = car.ImageData;
+                    dbEntry.ImageMimeType = car.ImageMimeType;
                 }
             }
             context.SaveChanges();

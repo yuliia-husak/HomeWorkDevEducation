@@ -39,6 +39,21 @@ namespace CarStore.WebUI.Controllers
             };
             return View(model);
         }
-        
+
+        public FileContentResult GetImage(int carId)
+        {
+            Car car = repository.Cars
+                .FirstOrDefault(g => g.CarId == carId);
+
+            if (car != null)
+            {
+                return File(car.ImageData, car.ImageMimeType);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }

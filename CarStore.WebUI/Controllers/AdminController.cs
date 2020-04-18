@@ -32,10 +32,16 @@ namespace CarStore.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Car car)
+        public ActionResult Edit(Car car, HttpPostedFileBase image = null)
         {
             if (ModelState.IsValid)
             {
+                if (image != null)
+                {
+                    car.ImageMimeType = image.ContentType;
+                    car.ImageData = new byte[image.ContentLength];
+                    image.InputStream.Read(car.ImageData, 0, image.ContentLength);
+                }
                 repository.SaveCar(car);
                 TempData["message"] = string.Format("Изменения в игре \"{0}\" были сохранены", car.Name);
                 return RedirectToAction("Index");
