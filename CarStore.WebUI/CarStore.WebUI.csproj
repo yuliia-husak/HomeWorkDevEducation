@@ -134,6 +134,7 @@
   <ItemGroup>
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\NavController.cs" />
@@ -144,7 +145,7 @@
     <Compile Include="Infrastructure\Binders\CartModelBinder.cs" />
     <Compile Include="Infrastructure\NinjectDependencyResolver.cs" />
     <Compile Include="Models\CartIndexViewModel.cs" />
-    <Compile Include="Models\GamesListViewModel.cs" />
+    <Compile Include="Models\CarsListViewModel.cs" />
     <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -167,6 +168,9 @@
     <Content Include="Views\Nav\FlexMenu.cshtml" />
     <Content Include="Views\Shared\_Layout.Mobille.cshtml" />
     <Content Include="Views\Nav\FlexMenu.Mobile.cshtml" />
+    <Content Include="Views\Shared\CarSummary.Mobile.cshtml" />
+    <Content Include="Views\Shared\_AdminLayout.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

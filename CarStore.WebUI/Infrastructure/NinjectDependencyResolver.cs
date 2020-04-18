@@ -8,7 +8,7 @@ using CarStore.Domain.Abstract;
 using CarStore.Domain.Entities;
 using CarStore.Domain.Concrete;
 
-namespace GameStore.WebUI.Infrastructure
+namespace CarStore.WebUI.Infrastructure
 {
     public class NinjectDependencyResolver : IDependencyResolver
     {

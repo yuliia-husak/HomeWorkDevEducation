@@ -4,7 +4,7 @@ using CarStore.Domain.Entities;
 using CarStore.Domain.Abstract;
 using CarStore.WebUI.Models;
 
-namespace GameStore.WebUI.Controllers
+namespace CarStore.WebUI.Controllers
 {
     public class CartController : Controller
     {

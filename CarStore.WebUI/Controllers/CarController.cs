@@ -33,7 +33,7 @@ namespace CarStore.WebUI.Controllers
                     ItemsPerPage = pageSize,
                     TotalItems = category == null ?
                     repository.Cars.Count() :
-                    repository.Cars.Where(game => game.Category == category).Count()
+                    repository.Cars.Where(car => car.Category == category).Count()
                 },
                 CurrentCategory = category
             };
