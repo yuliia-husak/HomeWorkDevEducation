@@ -26,7 +26,7 @@ namespace CarStore.Domain.Entities
         [Required(ErrorMessage = "Пожалуйста, укажите категорию для машины")]
         public string Category { get; set; }
 
-        [Display(Name ="Цена (руб)")]
+        [Display(Name ="Цена (грн)")]
         [Required]
         [Range(0.01, double.MaxValue, ErrorMessage = "Пожалуйста, введите положительное значение для цены")]
         public decimal Price { get; set; }

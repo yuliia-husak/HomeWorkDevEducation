@@ -11,10 +11,17 @@ namespace CarStore.WebUI.Controllers
         
         private ICarRepository repository;
         private IOrderProcessor orderProcessor;
+        private ICarRepository @object;
+
         public CartController(ICarRepository repo, IOrderProcessor processor)
         {
             repository = repo;
             orderProcessor = processor;
+        }
+
+        public CartController(ICarRepository @object)
+        {
+            this.@object = @object;
         }
 
         public ViewResult Checkout()
